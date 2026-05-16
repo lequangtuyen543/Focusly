@@ -1,3 +1,12 @@
+export const save = (key: string, value: unknown) => {
+  try { localStorage.setItem(key, JSON.stringify(value)) } catch { /* noop */ }
+}
+
+export const load = (key: string) => {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : null } catch { return null }
+}
+
+export default { save, load }
 const PREFIX = 'focusly_'
 
 export function getFromStorage<T>(key: string, fallback: T): T {

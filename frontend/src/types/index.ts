@@ -1,3 +1,18 @@
+export interface TimerState {
+  isRunning: boolean
+  seconds: number
+}
+
+export interface Session {
+  id: string
+  duration: number
+  startAt: string
+  notes?: string
+}
+
+export type AppRoutes = 'home' | 'timer' | 'stats' | 'history'
+
+export default {}
 export type SessionType = 'focus' | 'break'
 
 export interface Session {

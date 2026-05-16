@@ -69,7 +69,7 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.1 Folder Structure
 
-- [ ] Tạo cấu trúc thư mục theo spec trong PRD:
+- [x] Tạo cấu trúc thư mục theo spec trong PRD:
   ```
   src/
   ├── assets/

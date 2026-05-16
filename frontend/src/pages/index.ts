@@ -1,0 +1,4 @@
+export { default as Home } from './Home'
+export { default as TimerPage } from './TimerPage'
+export { default as StatsPage } from './StatsPage'
+export { default as HistoryPage } from './HistoryPage'
