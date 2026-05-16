@@ -32,8 +32,8 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] Đặt tên dự án: **Focusly** — ứng dụng Pomodoro tối giản, tập trung vào focus & habit tracking.
 - [x] Viết tài liệu PRD (`PRD.md`): timer 25/5, daily goal, stats, streak, session history, focus quotes.
 - [x] Viết tài liệu TODO (`TODO.md`): roadmap triển khai chi tiết theo phase/sprint cho toàn bộ dự án Focusly, bao gồm setup, frontend-first development, timer engine, statistics, LocalStorage persistence, testing, backend/API integration, deploy và documentation.
+- [x] Xác định color palette, typography, spacing scale trước khi code (`/ui/DESIGN.md`).
 - [ ] Thiết kế UI prototype (Figma / Excalidraw / tay): các màn hình chính — Timer, Stats, History, Settings.
-- [ ] Xác định color palette, typography, spacing scale trước khi code.
 - [ ] Viết `PROJECT_KNOWLEDGE.md`: tóm tắt tech decisions, data model, naming conventions — dùng làm reference khi build.
 
 ---
