@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Focusly - Statistics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#ddd9da",
+                      "medium-gray": "#646464",
+                      "on-primary-fixed-variant": "#464651",
+                      "surface-variant": "#e5e1e2",
+                      "rich-black": "#282834",
+                      "surface-tint": "#5e5d69",
+                      "action-azure": "#41a1cf",
+                      "on-error": "#ffffff",
+                      "steel-gray": "#dee2de",
+                      "on-background": "#1c1b1c",
+                      "dark-charcoal": "#171717",
+                      "on-secondary-fixed-variant": "#004b72",
+                      "outline": "#78767c",
+                      "ash-gray": "#f9faf7",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#4d4635",
+                      "primary-fixed-dim": "#c7c5d3",
+                      "secondary-container": "#60bbfe",
+                      "inverse-on-surface": "#f4f0f0",
+                      "on-tertiary-fixed": "#201b0d",
+                      "canvas-white": "#ffffff",
+                      "on-primary-container": "#878693",
+                      "surface-bright": "#fcf8f9",
+                      "primary": "#070710",
+                      "surface": "#fcf8f9",
+                      "background": "#fcf8f9",
+                      "slate-gray": "#444141",
+                      "secondary": "#006496",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#cce5ff",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f1edee",
+                      "outline-variant": "#c8c5cc",
+                      "secondary-fixed-dim": "#90cdff",
+                      "charcoal": "#2c2c2c",
+                      "light-gray": "#b4b8b4",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ece2ca",
+                      "inverse-primary": "#c7c5d3",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#47464b",
+                      "on-secondary-fixed": "#001e31",
+                      "on-primary-fixed": "#1b1b25",
+                      "primary-fixed": "#e3e1ef",
+                      "cool-gray": "#eef1ed",
+                      "surface-container-high": "#ebe7e8",
+                      "on-tertiary-container": "#908773",
+                      "primary-container": "#1f1f29",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#004970",
+                      "pitch-black": "#000000",
+                      "tertiary-fixed-dim": "#d0c6af",
+                      "tertiary": "#0c0801",
+                      "off-white": "#fefffc",
+                      "inverse-surface": "#313031",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f7f3f3",
+                      "surface-container-highest": "#e5e1e2",
+                      "on-surface": "#1c1b1c",
+                      "tertiary-container": "#252011"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "16px",
+                      "max-width": "1200px",
+                      "section-gap": "32px",
+                      "element-gap": "8px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body": [
+                              "hankenGrotesk"
+                      ],
+                      "caption": [
+                              "hankenGrotesk"
+                      ],
+                      "subheading": [
+                              "hankenGrotesk"
+                      ],
+                      "button-label": [
+                              "hankenGrotesk"
+                      ],
+                      "heading-lg": [
+                              "notoSerif"
+                      ],
+                      "heading": [
+                              "notoSerif"
+                      ],
+                      "display": [
+                              "notoSerif"
+                      ]
+              },
+              "fontSize": {
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "subheading": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "button-label": [
+                              "16px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "-0.012em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "heading-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "heading": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "54px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body text-body antialiased min-h-screen flex flex-col pt-32">
+<!-- TopNavBar Component -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 w-full max-w-[1200px] z-50 rounded-full bg-canvas-white/80 dark:bg-primary-container/80 backdrop-blur-md shadow-sm dark:shadow-none bg-ash-gray/16 dark:bg-steel-gray/16 backdrop-blur-xl border border-outline-variant/20">
+<div class="flex justify-between items-center px-8 py-3 w-[95%] md:w-full mx-auto">
+<div class="font-heading-lg text-subheading font-bold text-primary dark:text-primary-fixed">Focusly</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-slate-gray dark:text-medium-gray font-medium hover:text-primary dark:hover:text-on-primary-fixed transition-colors font-body text-button-label hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/20 rounded-full transition-all px-4 py-2 scale-98 active:scale-95 duration-200 ease-out" href="#">Timer</a>
+<a aria-current="page" class="text-secondary dark:text-secondary-container font-semibold border-b-2 border-secondary dark:border-secondary-container pb-1 font-body text-button-label hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/20 rounded-full transition-all px-4 py-2 scale-98 active:scale-95 duration-200 ease-out" href="#">Stats</a>
+<a class="text-slate-gray dark:text-medium-gray font-medium hover:text-primary dark:hover:text-on-primary-fixed transition-colors font-body text-button-label hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/20 rounded-full transition-all px-4 py-2 scale-98 active:scale-95 duration-200 ease-out" href="#">History</a>
+<a class="text-slate-gray dark:text-medium-gray font-medium hover:text-primary dark:hover:text-on-primary-fixed transition-colors font-body text-button-label hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/20 rounded-full transition-all px-4 py-2 scale-98 active:scale-95 duration-200 ease-out" href="#">Settings</a>
+</nav>
+<button class="bg-primary text-on-primary font-button-label text-button-label px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">Get Started</button>
+</div>
+</header>
+<main class="flex-grow max-w-[1200px] mx-auto w-full px-8 pb-32">
+<!-- Dashboard Header -->
+<section class="mb-section-gap">
+<h1 class="font-heading-lg text-heading-lg text-primary mb-4">Your Progress</h1>
+<p class="font-body text-body text-slate-gray max-w-2xl">A high-level overview of your focus sessions and productivity trends. Consistent effort compounds over time.</p>
+</section>
+<!-- Bento Grid Layout for Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-section-gap">
+<!-- Summary Card 1: Total Focus Time -->
+<div class="bg-off-white rounded-[12px] p-6 shadow-sm border border-outline-variant/10 flex flex-col justify-between">
+<div class="flex items-center gap-3 mb-6 text-slate-gray">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-subheading text-subheading">Total Focus Time</span>
+</div>
+<div>
+<div class="font-heading text-heading text-primary">124<span class="font-body text-subheading text-slate-gray ml-2">hrs</span></div>
+<div class="font-caption text-caption text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+                        +12% this month
+                    </div>
+</div>
+</div>
+<!-- Summary Card 2: Completed Pomodoros -->
+<div class="bg-off-white rounded-[12px] p-6 shadow-sm border border-outline-variant/10 flex flex-col justify-between">
+<div class="flex items-center gap-3 mb-6 text-slate-gray">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-subheading text-subheading">Pomodoros</span>
+</div>
+<div>
+<div class="font-heading text-heading text-primary">248</div>
+<div class="font-caption text-caption text-medium-gray mt-2 flex items-center gap-1">
+                        Completed sessions
+                    </div>
+</div>
+</div>
+<!-- Summary Card 3: Current Streak -->
+<div class="bg-secondary/5 rounded-[12px] p-6 shadow-sm border border-secondary/20 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-6 text-secondary relative z-10">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-subheading text-subheading">Current Streak</span>
+</div>
+<div class="relative z-10">
+<div class="font-heading text-heading text-primary">14<span class="font-body text-subheading text-slate-gray ml-2">days</span></div>
+<div class="font-caption text-caption text-slate-gray mt-2 flex items-center gap-1">
+                        Personal best: 21 days
+                    </div>
+</div>
+</div>
+</div>
+<!-- Main Chart Section -->
+<section class="bg-canvas-white rounded-[24px] p-8 shadow-sm border border-outline-variant/10 mb-section-gap">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant/10 pb-6">
+<div>
+<h2 class="font-heading text-subheading text-primary mb-2">Weekly Focus Trend</h2>
+<p class="font-body text-caption text-slate-gray">Minutes spent in deep work per day.</p>
+</div>
+<div class="font-subheading text-subheading text-secondary">
+                    Total: 28.5 hrs
+                </div>
+</div>
+<!-- CSS Bar Chart simulating Recharts minimal aesthetic -->
+<div class="h-64 flex items-end justify-between gap-4 px-4 relative">
+<!-- Y-axis guidelines -->
+<div class="absolute w-full h-full flex flex-col justify-between left-0 pointer-events-none">
+<div class="w-full border-t border-outline-variant/10 border-dashed relative"><span class="absolute -left-8 -top-3 font-caption text-caption text-medium-gray">4h</span></div>
+<div class="w-full border-t border-outline-variant/10 border-dashed relative"><span class="absolute -left-8 -top-3 font-caption text-caption text-medium-gray">3h</span></div>
+<div class="w-full border-t border-outline-variant/10 border-dashed relative"><span class="absolute -left-8 -top-3 font-caption text-caption text-medium-gray">2h</span></div>
+<div class="w-full border-t border-outline-variant/10 border-dashed relative"><span class="absolute -left-8 -top-3 font-caption text-caption text-medium-gray">1h</span></div>
+<div class="w-full border-t border-outline-variant/20 relative"><span class="absolute -left-8 -top-3 font-caption text-caption text-medium-gray">0</span></div>
+</div>
+<!-- Bars -->
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">120m</div>
+<div class="w-full bg-secondary/80 hover:bg-secondary rounded-t-[4px] transition-colors" style="height: 40%;"></div>
+<div class="font-caption text-caption text-medium-gray">Mon</div>
+</div>
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">180m</div>
+<div class="w-full bg-secondary/80 hover:bg-secondary rounded-t-[4px] transition-colors" style="height: 60%;"></div>
+<div class="font-caption text-caption text-medium-gray">Tue</div>
+</div>
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">210m</div>
+<div class="w-full bg-secondary/80 hover:bg-secondary rounded-t-[4px] transition-colors" style="height: 70%;"></div>
+<div class="font-caption text-caption text-medium-gray">Wed</div>
+</div>
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">90m</div>
+<div class="w-full bg-secondary/80 hover:bg-secondary rounded-t-[4px] transition-colors" style="height: 30%;"></div>
+<div class="font-caption text-caption text-medium-gray">Thu</div>
+</div>
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">240m</div>
+<div class="w-full bg-secondary/80 hover:bg-secondary rounded-t-[4px] transition-colors" style="height: 80%;"></div>
+<div class="font-caption text-caption text-medium-gray font-semibold text-primary">Fri</div>
+</div>
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">60m</div>
+<div class="w-full bg-secondary/40 hover:bg-secondary/60 rounded-t-[4px] transition-colors" style="height: 20%;"></div>
+<div class="font-caption text-caption text-medium-gray">Sat</div>
+</div>
+<div class="w-full max-w-[40px] flex flex-col items-center gap-4 z-10 group cursor-pointer relative">
+<div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-caption text-caption px-2 py-1 rounded">0m</div>
+<div class="w-full bg-surface-dim rounded-t-[4px] transition-colors" style="height: 5%;"></div>
+<div class="font-caption text-caption text-medium-gray">Sun</div>
+</div>
+</div>
+</section>
+<!-- Insights Text Block -->
+<section class="max-w-3xl mx-auto text-center">
+<h3 class="font-heading text-subheading text-primary mb-4">Architectural Consistency</h3>
+<p class="font-body text-body text-slate-gray leading-relaxed">
+                Your focus architecture is stabilizing. Tuesday through Friday demonstrate a solid block of deep work, suggesting an optimal routine. Consider scheduling less demanding tasks for the weekend to allow cognitive recovery.
+            </p>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-12 bg-transparent border-t border-outline-variant/10 flat no shadows mt-auto">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-8 gap-4">
+<div class="font-heading text-subheading text-primary dark:text-primary-fixed">Focusly</div>
+<div class="font-caption text-caption text-medium-gray dark:text-outline opacity-80 hover:opacity-100 duration-200">© 2024 Focusly. Deep focus, architected.</div>
+<nav class="flex gap-6 font-caption text-caption text-medium-gray dark:text-outline">
+<a class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 duration-200" href="#">Privacy Policy</a>
+<a class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 duration-200" href="#">Terms of Service</a>
+<a class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 duration-200" href="#">Support</a>
+</nav>
+</div>
+</footer>
+</body></html>
