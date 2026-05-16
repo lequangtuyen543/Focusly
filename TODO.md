@@ -42,20 +42,20 @@ Phase 10 → Deploy & Tài liệu hóa
 
 > **Ước tính:** 0.5 ngày | **Mục tiêu:** Môi trường dev sẵn sàng, deploy pipeline hoạt động
 
-- [ ] Khởi tạo project: `pnpm create vite@latest focusly --template react-ts`
-- [ ] Cấu hình Vite (`vite.config.ts`): alias paths (`@/` → `src/`), port mặc định.
-- [ ] Cài đặt dependencies chính:
-  - [ ] TailwindCSS v3 + `@tailwindcss/forms`
-  - [ ] Zustand (state management)
-  - [ ] Recharts (charts)
-  - [ ] React Router v6
-  - [ ] `clsx` + `tailwind-merge` (class utilities)
-  - [ ] `date-fns` (date helpers)
-  - [ ] `lucide-react` (icons)
-- [ ] Cấu hình TailwindCSS (`tailwind.config.ts`): custom color palette Focusly, font stack, animation.
-- [ ] Cấu hình ESLint (`eslint.config.js`): rules phù hợp React + TypeScript.
-- [ ] Cấu hình Prettier (`.prettierrc`): tabWidth 2, singleQuote, trailing comma.
-- [ ] Cấu hình `tsconfig.json`: strict mode, path aliases.
+- [x] Khởi tạo project: `pnpm create vite@latest focusly --template react-ts`
+- [x] Cấu hình Vite (`vite.config.ts`): alias paths (`@/` → `src/`), port mặc định.
+- [x] Cài đặt dependencies chính:
+  - [x] TailwindCSS v3 + `@tailwindcss/forms`
+  - [x] Zustand (state management)
+  - [x] Recharts (charts)
+  - [x] React Router v6
+  - [x] `clsx` + `tailwind-merge` (class utilities)
+  - [x] `date-fns` (date helpers)
+  - [x] `lucide-react` (icons)
+- [x] Cấu hình TailwindCSS (`tailwind.config.ts`): custom color palette Focusly, font stack, animation.
+- [x] Cấu hình ESLint (`eslint.config.js`): rules phù hợp React + TypeScript.
+- [x] Cấu hình Prettier (`.prettierrc`): tabWidth 2, singleQuote, trailing comma.
+- [x] Cấu hình `tsconfig.json`: strict mode, path aliases.
 - [ ] Tạo repository GitHub, cấu hình `.gitignore` (node_modules, dist, .env).
 - [ ] Viết `README.md` ban đầu: tên project, tech stack, lệnh chạy dev.
 - [ ] Cấu hình deploy pipeline: kết nối GitHub repo với Vercel (auto-deploy khi push `main`).

@@ -1,0 +1,176 @@
+@import "shadcn/tailwind.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /*
+      Pockly Editorial Minimalism Design System
+      Background (Parchment): #f5f4ed
+      Surface (Ivory):        #faf9f5
+      Brand (Terracotta):     #c96442
+      On-Surface (Ink):       #231916
+      Secondary (Stone):      #5f5e5a
+      Border (Beige):         #e8e6dc
+    */
+    --background: 48 25% 95%;
+    --foreground: 15 22% 11%;
+
+    --card: 48 33% 97%;
+    --card-foreground: 15 22% 11%;
+
+    --popover: 48 33% 97%;
+    --popover-foreground: 15 22% 11%;
+
+    --primary: 15 56% 52%;
+    --primary-foreground: 48 25% 95%;
+
+    --secondary: 45 3% 36%;
+    --secondary-foreground: 48 25% 95%;
+
+    --muted: 45 17% 88%;
+    --muted-foreground: 45 3% 36%;
+
+    --accent: 45 17% 91%;
+    --accent-foreground: 15 22% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 48 25% 95%;
+
+    --border: 45 17% 88%;
+    --input: 45 17% 88%;
+    --ring: 15 56% 52%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 24 11% 10%;
+    --foreground: 48 25% 95%;
+    --card: 24 11% 12%;
+    --card-foreground: 48 25% 95%;
+    --popover: 24 11% 12%;
+    --popover-foreground: 48 25% 95%;
+    --primary: 15 65% 60%;
+    --primary-foreground: 24 11% 10%;
+    --secondary: 24 11% 14%;
+    --secondary-foreground: 48 25% 95%;
+    --muted: 24 11% 14%;
+    --muted-foreground: 45 3% 60%;
+    --accent: 24 11% 14%;
+    --accent-foreground: 48 25% 95%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 48 25% 95%;
+    --border: 24 11% 18%;
+    --input: 24 11% 18%;
+    --ring: 15 65% 60%;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    font-family: "Inter", system-ui, sans-serif;
+    color: #231916;
+    background-color: #f5f4ed;
+  }
+}
+
+@layer utilities {
+  /* Card with ivory/parchment surface */
+  .card-ivory {
+    background-color: #faf9f5;
+    border: 1px solid #e8e6dc;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Subtle ring */
+  .ring-subtle {
+    box-shadow: 0 0 0 2px rgba(232, 230, 220, 0.5);
+  }
+
+  /* Material Symbols defaults */
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    font-family: "Material Symbols Outlined";
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+  }
+
+  /* Typography utilities matching design tokens */
+  .text-display-lg {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  .text-headline-md {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 400;
+  }
+
+  .text-title-sm {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+
+  .text-label-caps {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .text-body-lg {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .text-body-sm {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  /* Color tokens */
+  .text-on-surface { color: #231916; }
+  .text-secondary-token { color: #5f5e5a; }
+  .text-primary-token { color: #c96442; }
+  .text-tertiary-variant { color: #004f50; }
+
+  /* Ring elevation from reference */
+  .ring-elevation {
+    box-shadow: 0 0 0 1px #e8e6dc, 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Donut chart gradient */
+  .donut-gradient {
+    background: conic-gradient(
+      #c96442 0% 45%,
+      #d97a5a 45% 70%,
+      #e8e6dc 70% 85%,
+      #5f5e5a 85% 100%
+    );
+  }
+}
