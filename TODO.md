@@ -59,7 +59,7 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] Tạo repository GitHub, cấu hình `.gitignore` (node_modules, dist, .env).
 - [x] Viết `README.md` ban đầu: tên project, tech stack, lệnh chạy dev.
 - [x] Cấu hình deploy pipeline: kết nối GitHub repo với Vercel (auto-deploy khi push `main`).
-- [ ] Verify: `pnpm dev` chạy thành công, Vercel build thành công (trang trắng ban đầu là ổn).
+- [x] Verify: `pnpm dev` chạy thành công, Vercel build thành công (trang trắng ban đầu là ổn).
 
 ---
 
