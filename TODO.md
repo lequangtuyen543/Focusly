@@ -56,9 +56,9 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] Cấu hình ESLint (`eslint.config.js`): rules phù hợp React + TypeScript.
 - [x] Cấu hình Prettier (`.prettierrc`): tabWidth 2, singleQuote, trailing comma.
 - [x] Cấu hình `tsconfig.json`: strict mode, path aliases.
-- [ ] Tạo repository GitHub, cấu hình `.gitignore` (node_modules, dist, .env).
-- [ ] Viết `README.md` ban đầu: tên project, tech stack, lệnh chạy dev.
-- [ ] Cấu hình deploy pipeline: kết nối GitHub repo với Vercel (auto-deploy khi push `main`).
+- [x] Tạo repository GitHub, cấu hình `.gitignore` (node_modules, dist, .env).
+- [x] Viết `README.md` ban đầu: tên project, tech stack, lệnh chạy dev.
+- [x] Cấu hình deploy pipeline: kết nối GitHub repo với Vercel (auto-deploy khi push `main`).
 - [ ] Verify: `pnpm dev` chạy thành công, Vercel build thành công (trang trắng ban đầu là ổn).
 
 ---
