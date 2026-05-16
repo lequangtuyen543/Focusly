@@ -34,7 +34,7 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] Viết tài liệu TODO (`TODO.md`): roadmap triển khai chi tiết theo phase/sprint cho toàn bộ dự án Focusly, bao gồm setup, frontend-first development, timer engine, statistics, LocalStorage persistence, testing, backend/API integration, deploy và documentation.
 - [x] Xác định color palette, typography, spacing scale trước khi code (`/ui/DESIGN.md`).
 - [x] Thiết kế UI prototype (`stitch`): các màn hình chính — Timer, Stats, History, Settings.
-- [ ] Viết `PROJECT_KNOWLEDGE.md`: tóm tắt tech decisions, data model, naming conventions — dùng làm reference khi build.
+- [x] Viết `AGENT.md`: tài liệu context cho AI coding agents, bao gồm tech decisions, architecture, naming conventions, data model và coding guidelines.
 
 ---
 
