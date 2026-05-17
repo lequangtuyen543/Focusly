@@ -131,11 +131,11 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Actions: `start()`, `pause()`, `resume()`, `reset()`, `tick()`
   - [x] **Quan trọng:** dùng `startTimestamp + Date.now()` để tính elapsed, không đếm tick — tránh drift khi tab bị ẩn
   - [x] Không persist timer state vào LocalStorage (reset khi reload là hành vi đúng)
-- [ ] `src/store/sessionStore.ts`:
-  - [ ] State: `sessions: Session[]`
-  - [ ] Actions: `addSession()`, `getTodaySessions()`, `getWeekSessions()`
-  - [ ] Persist vào LocalStorage key `focusly_sessions`
-  - [ ] Auto-filter: hàm lấy sessions hôm nay bằng `isToday()`
+- [x] `src/store/sessionStore.ts`:
+  - [x] State: `sessions: Session[]`
+  - [x] Actions: `addSession()`, `getTodaySessions()`, `getWeekSessions()`
+  - [x] Persist vào LocalStorage key `focusly_sessions`
+  - [x] Auto-filter: hàm lấy sessions hôm nay bằng `isToday()`
 - [ ] `src/store/settingsStore.ts`:
   - [ ] State: `settings: UserSettings` với default values
   - [ ] Actions: `updateSettings()`, `resetSettings()`
