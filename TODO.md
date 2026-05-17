@@ -136,10 +136,10 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Actions: `addSession()`, `getTodaySessions()`, `getWeekSessions()`
   - [x] Persist vào LocalStorage key `focusly_sessions`
   - [x] Auto-filter: hàm lấy sessions hôm nay bằng `isToday()`
-- [ ] `src/store/settingsStore.ts`:
-  - [ ] State: `settings: UserSettings` với default values
-  - [ ] Actions: `updateSettings()`, `resetSettings()`
-  - [ ] Persist vào LocalStorage key `focusly_settings`
+- [x] `src/store/settingsStore.ts`:
+  - [x] State: `settings: UserSettings` với default values
+  - [x] Actions: `updateSettings()`, `resetSettings()`
+  - [x] Persist vào LocalStorage key `focusly_settings`
 - [ ] `src/store/streakStore.ts`:
   - [ ] State: `streak: StreakData`
   - [ ] Actions: `updateStreak()` — gọi sau mỗi focus session hoàn thành
