@@ -89,14 +89,14 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.2 TypeScript Types
 
-- [ ] Định nghĩa toàn bộ shared types trong `src/types/index.ts`:
-  - [ ] `SessionType = 'focus' | 'break'`
-  - [ ] `Session` interface: `id`, `type`, `startTime`, `endTime`, `duration`, `completed`
-  - [ ] `UserSettings` interface: `dailyGoal`, `focusDuration`, `breakDuration`, `notificationEnabled`, `soundEnabled`
-  - [ ] `StreakData` interface: `currentStreak`, `longestStreak`, `lastActiveDate`
-  - [ ] `DailyStats` interface: tổng hợp thống kê theo ngày
-  - [ ] `TimerMode = 'focus' | 'break'`
-  - [ ] `TimerStatus = 'idle' | 'running' | 'paused'`
+- [x] Định nghĩa toàn bộ shared types trong `src/types/index.ts`:
+  - [x] `SessionType = 'focus' | 'break'`
+  - [x] `Session` interface: `id`, `type`, `startTime`, `endTime`, `duration`, `completed`
+  - [x] `UserSettings` interface: `dailyGoal`, `focusDuration`, `breakDuration`, `notificationEnabled`, `soundEnabled`
+  - [x] `StreakData` interface: `currentStreak`, `longestStreak`, `lastActiveDate`
+  - [x] `DailyStats` interface: tổng hợp thống kê theo ngày
+  - [x] `TimerMode = 'focus' | 'break'`
+  - [x] `TimerStatus = 'idle' | 'running' | 'paused'`
 
 ### 3.3 Utility Functions
 
