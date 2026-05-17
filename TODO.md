@@ -140,10 +140,10 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] State: `settings: UserSettings` với default values
   - [x] Actions: `updateSettings()`, `resetSettings()`
   - [x] Persist vào LocalStorage key `focusly_settings`
-- [ ] `src/store/streakStore.ts`:
-  - [ ] State: `streak: StreakData`
-  - [ ] Actions: `updateStreak()` — gọi sau mỗi focus session hoàn thành
-  - [ ] Persist vào LocalStorage key `focusly_streak`
+- [x] `src/store/streakStore.ts`:
+  - [x] State: `streak: StreakData`
+  - [x] Actions: `updateStreak()` — gọi sau mỗi focus session hoàn thành
+  - [x] Persist vào LocalStorage key `focusly_streak`
 
 ### 3.6 Layout & Routing
 
