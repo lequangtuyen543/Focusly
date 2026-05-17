@@ -1,52 +1,35 @@
-import { mergeProps } from "@base-ui/react/merge-props"
-import { useRender } from "@base-ui/react/use-render"
-import { cva, type VariantProps } from "class-variance-authority"
+import React from 'react';
+import { cn } from '@/lib/utils';
 
-import { cn } from "@/lib/utils"
+type BadgeVariant = 'default' | 'success' | 'warning' | 'focus' | 'break';
 
-const badgeVariants = cva(
-  "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-nav-pill border border-transparent px-2 py-0.5 text-caption font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-dark-charcoal/50 aria-invalid:border-error aria-invalid:ring-error/20 [&>svg]:pointer-events-none [&>svg]:size-3!",
-  {
-    variants: {
-      variant: {
-        default: "bg-dark-charcoal text-canvas-white hover:bg-rich-black",
-        secondary:
-          "bg-cofounder-blue text-canvas-white hover:bg-cofounder-blue/90",
-        destructive:
-          "bg-transparent text-error border border-error/50 focus-visible:ring-error/20 hover:bg-error/10",
-        outline:
-          "border-outline-variant text-dark-charcoal hover:bg-ash-gray/50",
-        ghost:
-          "hover:bg-ash-gray/50 hover:text-dark-charcoal",
-        link: "text-cofounder-blue underline-offset-4 hover:underline",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
-
-function Badge({
-  className,
-  variant = "default",
-  render,
-  ...props
-}: useRender.ComponentProps<"span"> & VariantProps<typeof badgeVariants>) {
-  return useRender({
-    defaultTagName: "span",
-    props: mergeProps<"span">(
-      {
-        className: cn(badgeVariants({ variant }), className),
-      },
-      props
-    ),
-    render,
-    state: {
-      slot: "badge",
-      variant,
-    },
-  })
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  variant?: BadgeVariant;
 }
 
-export { Badge, badgeVariants }
+const badgeVariants: Record<BadgeVariant, string> = {
+  default: 'bg-dark-charcoal/10 text-dark-charcoal',
+  success: 'bg-action-azure/10 text-action-azure',
+  warning: 'bg-rich-black/10 text-rich-black',
+  focus: 'bg-cofounder-blue text-canvas-white',
+  break: 'bg-ash-gray text-medium-gray',
+};
+
+const Badge: React.FC<BadgeProps> = ({ variant = 'default', className, children, ...props }) => {
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center rounded-nav-pill px-2.5 py-0.5 text-caption font-medium whitespace-nowrap',
+        'transition-colors duration-150',
+        badgeVariants[variant],
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+};
+
+export { Badge };
+export type { BadgeProps, BadgeVariant };
