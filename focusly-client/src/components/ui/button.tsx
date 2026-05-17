@@ -1,18 +1,3 @@
-import React from 'react'
-
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'ghost'
-}
-
-export const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
-  return (
-    <button {...rest}>
-      {children}
-    </button>
-  )
-}
-
-export default Button
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 

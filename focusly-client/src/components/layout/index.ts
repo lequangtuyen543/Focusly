@@ -1,1 +1,3 @@
-export { default as AppLayout } from './AppLayout'
+export { Layout } from './Layout'
+export { Header } from './Header'
+export { Navigation } from './Navigation'

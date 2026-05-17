@@ -147,14 +147,14 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.6 Layout & Routing
 
-- [ ] `src/components/layout/Layout.tsx`: wrapper chính với header + main + optional footer
-- [ ] `src/components/layout/Header.tsx`: logo Focusly + navigation links
-- [ ] `src/components/layout/Navigation.tsx`: tab navigation (Timer / Stats / History)
+- [x] `src/components/layout/Layout.tsx`: wrapper chính với header + main + optional footer
+- [x] `src/components/layout/Header.tsx`: logo Focusly + navigation links
+- [x] `src/components/layout/Navigation.tsx`: tab navigation (Timer / Stats / History)
+- [x] Cấu hình React Router trong `src/App.tsx`: routes cho 4 pages trên
 - [ ] `src/pages/TimerPage.tsx`: placeholder
 - [ ] `src/pages/StatsPage.tsx`: placeholder
 - [ ] `src/pages/HistoryPage.tsx`: placeholder
 - [ ] `src/pages/SettingsPage.tsx`: placeholder
-- [ ] Cấu hình React Router trong `src/App.tsx`: routes cho 4 pages trên
 - [ ] Verify: navigate giữa các page hoạt động, không bị lỗi
 
 ### 3.7 Shared UI Components

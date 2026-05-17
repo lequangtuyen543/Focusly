@@ -1,12 +1,3 @@
-import React from 'react'
-
-type InputProps = React.InputHTMLAttributes<HTMLInputElement>
-
-export const Input: React.FC<InputProps> = (props) => {
-  return <input {...props} />
-}
-
-export default Input
 import * as React from "react"
 import { Input as InputPrimitive } from "@base-ui/react/input"
 

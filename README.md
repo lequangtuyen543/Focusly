@@ -15,7 +15,7 @@ Quick start (local)
 
 ```bash
 git clone <your-repo-url>
-cd Focusly/frontend
+cd Focusly/focusly-client
 pnpm install
 ```
 
