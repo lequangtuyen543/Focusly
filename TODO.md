@@ -100,15 +100,15 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.3 Utility Functions
 
-- [ ] `src/utils/storage.ts`: LocalStorage helpers có type-safe
-  - [ ] `getFromStorage<T>(key, fallback): T`
-  - [ ] `saveToStorage<T>(key, value): void`
-  - [ ] `removeFromStorage(key): void`
-  - [ ] Prefix tất cả keys bằng `focusly_` để tránh conflict
-- [ ] `src/utils/time.ts`: time helpers
-  - [ ] `formatTime(seconds: number): string` → `"25:00"`
-  - [ ] `formatDuration(seconds: number): string` → `"25 phút"` hoặc `"1 giờ 30 phút"`
-  - [ ] `formatCurrency` → không cần (Pomodoro app không có tiền)
+- [x] `src/utils/storage.ts`: LocalStorage helpers có type-safe
+  - [x] `getFromStorage<T>(key, fallback): T`
+  - [x] `saveToStorage<T>(key, value): void`
+  - [x] `removeFromStorage(key): void`
+  - [x] Prefix tất cả keys bằng `focusly_` để tránh conflict
+- [x] `src/utils/time.ts`: time helpers
+  - [x] `formatTime(seconds: number): string` → `"25:00"`
+  - [x] `formatDuration(seconds: number): string` → `"25 phút"` hoặc `"1 giờ 30 phút"`
+  - [x] `formatCurrency` → không cần (Pomodoro app không có tiền)
 - [ ] `src/utils/dateUtils.ts`: date helpers
   - [ ] `isToday(dateString: string): boolean`
   - [ ] `isSameDay(a: string, b: string): boolean`
