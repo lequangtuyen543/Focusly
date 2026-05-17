@@ -114,9 +114,9 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] `isSameDay(a: string, b: string): boolean`
   - [x] `getWeekDays(referenceDate?: Date): string[]` → 7 ngày gần nhất
   - [x] `toDateKey(date?: Date): string` → `"2026-05-11"`
-- [ ] `src/utils/streakUtils.ts`: streak logic
-  - [ ] `calculateStreak(sessions: Session[]): StreakData`
-  - [ ] `isConsecutiveDay(date1: string, date2: string): boolean`
+- [x] `src/utils/streakUtils.ts`: streak logic
+  - [x] `calculateStreak(sessions: Session[]): StreakData`
+  - [x] `isConsecutiveDay(date1: string, date2: string): boolean`
 
 ### 3.4 Data
 
