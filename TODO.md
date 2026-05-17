@@ -120,9 +120,9 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.4 Data
 
-- [ ] `src/data/quotes.ts`: mảng 40–50 motivational quotes tiếng Anh/Việt
-  - [ ] Đảm bảo diversity: quotes về focus, consistency, growth, discipline
-  - [ ] Export `getRandomQuote(): string` function
+- [x] `src/data/quotes.ts`: mảng 40–50 motivational quotes tiếng Anh/Việt
+  - [x] Đảm bảo diversity: quotes về focus, consistency, growth, discipline
+  - [x] Export `getRandomQuote(): string` function
 
 ### 3.5 Zustand Stores
 
