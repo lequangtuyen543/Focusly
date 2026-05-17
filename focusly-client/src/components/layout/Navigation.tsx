@@ -1,31 +1,29 @@
 import { NavLink } from 'react-router-dom'
-import { Timer, BarChart3, History, Settings } from 'lucide-react'
 
 const navItems = [
-  { to: '/', label: 'Timer', icon: Timer },
-  { to: '/stats', label: 'Stats', icon: BarChart3 },
-  { to: '/history', label: 'History', icon: History },
-  { to: '/settings', label: 'Settings', icon: Settings },
+  { to: '/', label: 'Timer' },
+  { to: '/stats', label: 'Stats' },
+  { to: '/history', label: 'History' },
+  { to: '/settings', label: 'Settings' },
 ] as const
 
 export function Navigation() {
   return (
-    <nav className="flex items-center gap-1">
-      {navItems.map(({ to, label, icon: Icon }) => (
+    <nav className="hidden md:flex items-center gap-2">
+      {navItems.map(({ to, label }) => (
         <NavLink
           key={to}
           to={to}
           end={to === '/'}
           className={({ isActive }) =>
-            `flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            `font-body text-button-label px-4 py-2 rounded-nav-pill transition-all duration-200 ease-out scale-98 ${
               isActive
-                ? 'bg-accent/10 text-accent'
-                : 'text-muted-foreground hover:text-foreground hover:bg-accent/5'
+                ? 'text-cofounder-blue font-semibold border-b-2 border-cofounder-blue pb-1'
+                : 'text-slate-gray font-medium hover:text-dark-charcoal hover:bg-surface-container-high/50'
             }`
           }
         >
-          <Icon className="h-4 w-4 shrink-0" />
-          <span className="hidden sm:inline">{label}</span>
+          {label}
         </NavLink>
       ))}
     </nav>

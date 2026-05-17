@@ -6,65 +6,68 @@
 @layer base {
   :root {
     /*
-      Pockly Editorial Minimalism Design System
-      Background (Parchment): #f5f4ed
-      Surface (Ivory):        #faf9f5
-      Brand (Terracotta):     #c96442
-      On-Surface (Ink):       #231916
-      Secondary (Stone):      #5f5e5a
-      Border (Beige):         #e8e6dc
+      Focusly Design System — Architectural Night Sky
+      Colors from design.md
     */
-    --background: 48 25% 95%;
-    --foreground: 15 22% 11%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
 
-    --card: 48 33% 97%;
-    --card-foreground: 15 22% 11%;
+    --card: 120 50% 100%;
+    --card-foreground: 0 0% 9%;
 
-    --popover: 48 33% 97%;
-    --popover-foreground: 15 22% 11%;
+    --popover: 120 50% 100%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 15 56% 52%;
-    --primary-foreground: 48 25% 95%;
+    --primary: 240 13% 14%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 3% 36%;
-    --secondary-foreground: 48 25% 95%;
+    --secondary: 200 100% 37%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 17% 88%;
-    --muted-foreground: 45 3% 36%;
+    --muted: 96 17% 96%;
+    --muted-foreground: 0 0% 39%;
 
-    --accent: 45 17% 91%;
-    --accent-foreground: 15 22% 11%;
+    --accent: 96 17% 96%;
+    --accent-foreground: 0 0% 9%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 48 25% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 45 17% 88%;
-    --input: 45 17% 88%;
-    --ring: 15 56% 52%;
+    --border: 96 13% 88%;
+    --input: 96 13% 88%;
+    --ring: 200 100% 37%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 24 11% 10%;
-    --foreground: 48 25% 95%;
-    --card: 24 11% 12%;
-    --card-foreground: 48 25% 95%;
-    --popover: 24 11% 12%;
-    --popover-foreground: 48 25% 95%;
-    --primary: 15 65% 60%;
-    --primary-foreground: 24 11% 10%;
-    --secondary: 24 11% 14%;
-    --secondary-foreground: 48 25% 95%;
-    --muted: 24 11% 14%;
-    --muted-foreground: 45 3% 60%;
-    --accent: 24 11% 14%;
-    --accent-foreground: 48 25% 95%;
+    --background: 240 13% 9%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 13% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 13% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 240 5% 80%;
+    --primary-foreground: 240 13% 9%;
+
+    --secondary: 200 70% 60%;
+    --secondary-foreground: 240 13% 9%;
+
+    --muted: 240 13% 14%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 240 13% 14%;
+    --accent-foreground: 0 0% 95%;
+
     --destructive: 0 63% 31%;
-    --destructive-foreground: 48 25% 95%;
-    --border: 24 11% 18%;
-    --input: 24 11% 18%;
-    --ring: 15 65% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 13% 18%;
+    --input: 240 13% 18%;
+    --ring: 200 70% 60%;
   }
 
   * {
@@ -72,25 +75,18 @@
   }
 
   body {
-    @apply bg-background text-foreground min-h-screen;
-    font-family: "Inter", system-ui, sans-serif;
+    @apply bg-canvas-white text-dark-charcoal font-body antialiased min-h-screen;
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    @apply bg-cofounder-blue/30 text-white;
   }
 }
 
 @layer utilities {
-  /* Card with ivory/parchment surface */
-  .card-ivory {
-    background-color: #faf9f5;
-    border: 1px solid #e8e6dc;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
-  }
-
-  /* Subtle ring */
-  .ring-subtle {
-    box-shadow: 0 0 0 2px rgba(232, 230, 220, 0.5);
-  }
-
-  /* Material Symbols defaults */
+  /* Material Symbols */
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     font-family: "Material Symbols Outlined";
@@ -105,70 +101,115 @@
     direction: ltr;
   }
 
-  /* Typography utilities matching design tokens */
-  .text-display-lg {
-    font-family: "Newsreader", Georgia, serif;
+  /* Typography — Design System exact specs */
+  .text-display {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 54px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .text-heading-lg {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .text-heading {
+    font-family: "Noto Serif", Georgia, serif;
     font-size: 40px;
-    line-height: 48px;
+    line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 400;
   }
 
-  .text-headline-md {
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 28px;
-    line-height: 36px;
-    font-weight: 400;
-  }
-
-  .text-title-sm {
-    font-family: "Newsreader", Georgia, serif;
-    font-size: 20px;
-    line-height: 28px;
+  .text-subheading {
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     font-weight: 500;
   }
 
-  .text-label-caps {
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .text-body-lg {
-    font-family: "Inter", system-ui, sans-serif;
+  .text-button-label {
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1;
+    letter-spacing: -0.012em;
+    font-weight: 600;
+  }
+
+  .text-body {
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
     font-weight: 400;
   }
 
-  .text-body-sm {
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
+  .text-caption {
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
     font-weight: 400;
   }
 
-  /* Color tokens */
-  .text-on-surface { color: #231916; }
-  .text-secondary-token { color: #5f5e5a; }
-  .text-primary-token { color: #c96442; }
-  .text-tertiary-variant { color: #004f50; }
-
-  /* Ring elevation from reference */
-  .ring-elevation {
-    box-shadow: 0 0 0 1px #e8e6dc, 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    .text-display {
+      font-size: 36px;
+    }
+    .text-heading-lg {
+      font-size: 32px;
+    }
+    .text-heading {
+      font-size: 28px;
+    }
   }
 
-  /* Donut chart gradient */
-  .donut-gradient {
-    background: conic-gradient(
-      #c96442 0% 45%,
-      #d97a5a 45% 70%,
-      #e8e6dc 70% 85%,
-      #5f5e5a 85% 100%
-    );
+  /* Component patterns from design system */
+  .nav-pill {
+    @apply rounded-nav-pill bg-ash-gray/80 backdrop-blur-xl border border-outline-variant/20 shadow-nav-item;
+  }
+
+  .elevated-card {
+    @apply bg-off-white rounded-cards-sm shadow-card border border-outline-variant/10;
+  }
+
+  .hero-overlay-card {
+    @apply bg-steel-gray/16 rounded-cards-lg p-card-padding;
+  }
+
+  .cofounder-card {
+    @apply bg-cofounder-blue rounded-cards-lg shadow-cofounder-card;
+  }
+
+  .ghost-input {
+    @apply bg-ash-gray border border-slate-gray text-dark-charcoal rounded-none focus:outline-none focus:border-primary-token focus:ring-1 focus:ring-primary-token transition-all;
+  }
+
+  .solid-dark-btn {
+    @apply bg-night-sky text-canvas-white border border-rich-black rounded-nav-items py-[7px] pb-[8px] pl-4 pr-3 hover:bg-rich-black transition-colors;
+  }
+
+  .outlined-action-btn {
+    @apply bg-transparent text-dark-charcoal border border-action-azure rounded-sm hover:bg-ash-gray/50 transition-colors;
+  }
+
+  .subtle-nav-btn {
+    @apply bg-white/6 text-dark-charcoal rounded-nav-items py-[5px] px-3 hover:bg-surface-container-high/50 transition-colors;
+  }
+
+  /* Scale press interaction */
+  .scale-press {
+    @apply transition-transform duration-200 ease-out active:scale-95;
+  }
+
+  .scale-98 {
+    @apply transition-transform duration-200 ease-out hover:scale-[0.98] active:scale-95;
   }
 }

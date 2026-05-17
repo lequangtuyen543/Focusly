@@ -1,55 +1,96 @@
 function HistoryPage() {
-  const placeholderSessions = [
-    { id: '1', date: 'Today', duration: '25:00', type: 'Focus', completed: true },
-    { id: '2', date: 'Today', duration: '25:00', type: 'Focus', completed: true },
-    { id: '3', date: 'Yesterday', duration: '25:00', type: 'Focus', completed: true },
-    { id: '4', date: 'Yesterday', duration: '5:00', type: 'Break', completed: true },
-    { id: '5', date: '2 days ago', duration: '25:00', type: 'Focus', completed: false },
+  const sessionsByDay = [
+    {
+      day: 'Today',
+      sessions: [
+        { id: '1', title: 'Deep Work: Design System', time: '09:00 AM - 09:45 AM', duration: '45m', type: 'focus' as const },
+        { id: '2', title: 'Short Break', time: '09:45 AM - 09:50 AM', duration: '5m', type: 'break' as const },
+        { id: '3', title: 'Deep Work: Component Dev', time: '09:50 AM - 10:40 AM', duration: '50m', type: 'focus' as const },
+      ],
+    },
+    {
+      day: 'Yesterday',
+      sessions: [
+        { id: '4', title: 'Writing: Blog Post', time: '02:00 PM - 03:00 PM', duration: '60m', type: 'focus' as const },
+      ],
+    },
+    {
+      day: 'October 24, 2023',
+      sessions: [],
+    },
   ]
 
   return (
-    <div className="flex flex-col gap-8">
-      <section>
-        <h1 className="font-serif text-3xl sm:text-4xl tracking-tight text-foreground">
-          History
-        </h1>
-        <p className="text-muted-foreground text-sm sm:text-base mt-1">
-          Review your completed and missed sessions.
+    <div className="flex flex-col gap-12">
+      {/* Header */}
+      <header className="flex flex-col gap-4 max-w-2xl">
+        <h1 className="font-display text-display text-dark-charcoal">Session History</h1>
+        <p className="font-body text-body text-medium-gray">
+          A record of your deep focus and intentional breaks. Review your patterns to optimize your workflow.
         </p>
-      </section>
+      </header>
 
-      <section className="bg-card border border-border/50 rounded-xl shadow-sm divide-y divide-border/50">
-        {placeholderSessions.map((session) => (
-          <div
-            key={session.id}
-            className="flex items-center justify-between px-4 sm:px-5 py-3.5"
-          >
-            <div className="flex items-center gap-3">
-              <div
-                className={`w-2 h-2 rounded-full shrink-0 ${
-                  session.completed ? 'bg-accent' : 'bg-muted-foreground/30'
-                }`}
-              />
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  {session.type} Session
-                </p>
-                <p className="text-xs text-muted-foreground">{session.date}</p>
+      {/* History Content */}
+      <div className="flex flex-col gap-12">
+        {sessionsByDay.map(({ day, sessions }) => (
+          <section key={day} className="flex flex-col gap-6">
+            <h2 className="font-subheading text-subheading text-slate-gray border-b border-steel-gray pb-2">
+              {day}
+            </h2>
+
+            {sessions.length === 0 ? (
+              <div className="bg-ash-gray rounded-xl p-8 border border-steel-gray border-dashed flex flex-col items-center justify-center text-center gap-3">
+                <span className="material-symbols-outlined text-outline-variant text-4xl">calendar_today</span>
+                <p className="font-body text-body text-slate-gray">No sessions recorded on this day.</p>
               </div>
-            </div>
-            <div className="text-right">
-              <p className="text-sm font-mono text-foreground">{session.duration}</p>
-              <p className="text-[11px] text-muted-foreground">
-                {session.completed ? 'Completed' : 'Skipped'}
-              </p>
-            </div>
-          </div>
+            ) : (
+              <div className="flex flex-col gap-3">
+                {sessions.map((session) => (
+                  <div
+                    key={session.id}
+                    className={`rounded-xl p-4 flex items-center justify-between transition-colors ${
+                      session.type === 'focus'
+                        ? 'bg-off-white border border-steel-gray/50 shadow-card hover:border-action-azure/30'
+                        : 'bg-ash-gray/50 border border-steel-gray/30'
+                    }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                          session.type === 'focus'
+                            ? 'bg-ash-gray text-dark-charcoal'
+                            : 'bg-transparent border border-outline-variant/30 text-slate-gray'
+                        }`}
+                      >
+                        <span
+                          className="material-symbols-outlined"
+                          style={{ fontVariationSettings: session.type === 'focus' ? "'FILL' 1" : "'FILL' 0" }}
+                        >
+                          {session.type === 'focus' ? 'timer' : 'coffee'}
+                        </span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-button-label text-button-label text-dark-charcoal">
+                          {session.title}
+                        </span>
+                        <span className="font-caption text-caption text-medium-gray">{session.time}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-6">
+                      <div className="flex flex-col items-end">
+                        <span className="font-subheading text-subheading text-dark-charcoal">{session.duration}</span>
+                        <span className={`font-caption text-caption ${session.type === 'focus' ? 'text-cofounder-blue' : 'text-medium-gray'}`}>
+                          {session.type === 'focus' ? 'Focus' : 'Break'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
         ))}
-      </section>
-
-      <p className="text-center text-xs text-muted-foreground/60">
-        Showing last 5 sessions
-      </p>
+      </div>
     </div>
   )
 }

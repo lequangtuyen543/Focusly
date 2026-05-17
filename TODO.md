@@ -155,7 +155,7 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] `src/pages/StatsPage.tsx`: placeholder
 - [x] `src/pages/HistoryPage.tsx`: placeholder
 - [x] `src/pages/SettingsPage.tsx`: placeholder
-- [ ] Verify: navigate giữa các page hoạt động, không bị lỗi
+- [x] Verify: navigate giữa các page hoạt động, không bị lỗi
 
 ### 3.7 Shared UI Components
 
