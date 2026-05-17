@@ -159,8 +159,8 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.7 Shared UI Components
 
-- [ ] `src/components/ui/Button.tsx`: variants `primary`, `secondary`, `ghost`, `danger`; sizes `sm`, `md`, `lg`
-- [ ] `src/components/ui/Card.tsx`: wrapper card với dark theme styling
+- [x] `src/components/ui/Button.tsx`: variants `primary`, `secondary`, `ghost`, `danger`; sizes `sm`, `md`, `lg`
+- [x] `src/components/ui/Card.tsx`: wrapper card với dark theme styling
 - [ ] `src/components/ui/Badge.tsx`: badge cho streak, session type
 - [ ] `src/components/ui/ProgressRing.tsx`: SVG-based circular progress, nhận `value` (0–100), `size`, `color`
 - [ ] `src/components/ui/EmptyState.tsx`: hiển thị khi không có data, nhận `message` và optional `icon`
