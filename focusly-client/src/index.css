@@ -74,8 +74,6 @@
   body {
     @apply bg-background text-foreground min-h-screen;
     font-family: "Inter", system-ui, sans-serif;
-    color: #231916;
-    background-color: #f5f4ed;
   }
 }
 

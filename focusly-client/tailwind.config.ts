@@ -41,8 +41,8 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: '#7c3eff',
+          foreground: '#ffffff',
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -52,7 +52,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Focusly specific colors
         focusly: {
           50: '#f8f6ff',
           100: '#efe9ff',
@@ -64,10 +63,6 @@ const config: Config = {
           700: '#5f2ad9',
           800: '#4a1f9f',
           900: '#33155f',
-        },
-        accent: {
-          DEFAULT: '#7c3eff',
-          foreground: '#ffffff',
         },
         teal: {
           DEFAULT: '#0fb9b1',

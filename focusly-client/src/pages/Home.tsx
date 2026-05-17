@@ -1,11 +1,10 @@
-import React from 'react'
-import { AppLayout } from '@/components/layout'
+import { Layout } from '@/components/layout'
 
-const Home: React.FC = () => {
+function Home() {
   return (
-    <AppLayout>
+    <Layout>
       <h1>Welcome to Focusly</h1>
-    </AppLayout>
+    </Layout>
   )
 }
 

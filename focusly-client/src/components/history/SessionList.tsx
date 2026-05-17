@@ -1,13 +1,14 @@
-import React from 'react'
-import { Session } from '@/types'
+import type { Session } from '@/types'
 
-type Props = { sessions?: Session[] }
+interface SessionListProps {
+  sessions?: Session[]
+}
 
-const SessionList: React.FC<Props> = ({ sessions = [] }) => {
+function SessionList({ sessions = [] }: SessionListProps) {
   return (
     <ul>
       {sessions.map((s) => (
-        <li key={s.id}>{s.duration}s — {s.startAt}</li>
+        <li key={s.id}>{s.duration}s — {s.startTime}</li>
       ))}
     </ul>
   )
