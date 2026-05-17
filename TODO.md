@@ -109,11 +109,11 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] `formatTime(seconds: number): string` → `"25:00"`
   - [x] `formatDuration(seconds: number): string` → `"25 phút"` hoặc `"1 giờ 30 phút"`
   - [x] `formatCurrency` → không cần (Pomodoro app không có tiền)
-- [ ] `src/utils/dateUtils.ts`: date helpers
-  - [ ] `isToday(dateString: string): boolean`
-  - [ ] `isSameDay(a: string, b: string): boolean`
-  - [ ] `getWeekDays(referenceDate?: Date): string[]` → 7 ngày gần nhất
-  - [ ] `toDateKey(date?: Date): string` → `"2026-05-11"`
+- [x] `src/utils/dateUtils.ts`: date helpers
+  - [x] `isToday(dateString: string): boolean`
+  - [x] `isSameDay(a: string, b: string): boolean`
+  - [x] `getWeekDays(referenceDate?: Date): string[]` → 7 ngày gần nhất
+  - [x] `toDateKey(date?: Date): string` → `"2026-05-11"`
 - [ ] `src/utils/streakUtils.ts`: streak logic
   - [ ] `calculateStreak(sessions: Session[]): StreakData`
   - [ ] `isConsecutiveDay(date1: string, date2: string): boolean`
