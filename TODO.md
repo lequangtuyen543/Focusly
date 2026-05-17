@@ -126,11 +126,11 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 3.5 Zustand Stores
 
-- [ ] `src/store/timerStore.ts`:
-  - [ ] State: `mode: TimerMode`, `status: TimerStatus`, `timeLeft: number`, `startTimestamp: number | null`
-  - [ ] Actions: `start()`, `pause()`, `resume()`, `reset()`, `tick()`
-  - [ ] **Quan trọng:** dùng `startTimestamp + Date.now()` để tính elapsed, không đếm tick — tránh drift khi tab bị ẩn
-  - [ ] Không persist timer state vào LocalStorage (reset khi reload là hành vi đúng)
+- [x] `src/store/timerStore.ts`:
+  - [x] State: `mode: TimerMode`, `status: TimerStatus`, `timeLeft: number`, `startTimestamp: number | null`
+  - [x] Actions: `start()`, `pause()`, `resume()`, `reset()`, `tick()`
+  - [x] **Quan trọng:** dùng `startTimestamp + Date.now()` để tính elapsed, không đếm tick — tránh drift khi tab bị ẩn
+  - [x] Không persist timer state vào LocalStorage (reset khi reload là hành vi đúng)
 - [ ] `src/store/sessionStore.ts`:
   - [ ] State: `sessions: Session[]`
   - [ ] Actions: `addSession()`, `getTodaySessions()`, `getWeekSessions()`
