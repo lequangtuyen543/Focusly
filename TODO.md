@@ -163,7 +163,7 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] `src/components/ui/Card.tsx`: wrapper card với dark theme styling
 - [x] `src/components/ui/Badge.tsx`: badge cho streak, session type
 - [x] `src/components/ui/EmptyState.tsx`: hiển thị khi không có data, nhận `message` và optional `icon`
-- [ ] `src/components/ui/ProgressRing.tsx`: SVG-based circular progress, nhận `value` (0–100), `size`, `color`
+- [x] `src/components/ui/ProgressRing.tsx`: SVG-based circular progress, nhận `value` (0–100), `size`, `color`
 
 ---
 

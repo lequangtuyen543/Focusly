@@ -88,7 +88,7 @@ function TimerPage() {
       <section className="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
         {/* Daily Goal Card */}
         <div className="bg-off-white rounded-xl p-card-padding border border-outline-variant/10 shadow-card flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-text-cofounder-blue">
+          <div className="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-cofounder-blue">
             <span className="material-symbols-outlined text-cofounder-blue" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
           </div>
           <div>
