@@ -175,11 +175,11 @@ Phase 10 → Deploy & Tài liệu hóa
 
 > Technical note: Timer dùng `Date.now()` để tính elapsed time — không dùng tick counter thuần
 
-- [ ] `src/hooks/useTimer.ts`:
-  - [ ] Quản lý `setInterval` với `useEffect`, cleanup đúng khi unmount
-  - [ ] Tính `timeLeft = duration - (Date.now() - startTimestamp)` mỗi giây
-  - [ ] Khi `timeLeft <= 0`: gọi `onSessionComplete()` callback
-  - [ ] Handle auto-switch: khi focus kết thúc → switch sang break; break kết thúc → switch sang focus
+- [x] `src/hooks/useTimer.ts`:
+  - [x] Quản lý `setInterval` với `useEffect`, cleanup đúng khi unmount
+  - [x] Tính `timeLeft = duration - (Date.now() - startTimestamp)` mỗi giây
+  - [x] Khi `timeLeft <= 0`: gọi `onSessionComplete()` callback
+  - [x] Handle auto-switch: khi focus kết thúc → switch sang break; break kết thúc → switch sang focus
   - [ ] Update `document.title` theo thời gian còn lại: `"25:00 — Focusly"`
 - [ ] `src/components/timer/TimerDisplay.tsx`:
   - [ ] Hiển thị thời gian dạng `MM:SS` với font monospace lớn
