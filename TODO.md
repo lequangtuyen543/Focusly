@@ -180,24 +180,24 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Tính `timeLeft = duration - (Date.now() - startTimestamp)` mỗi giây
   - [x] Khi `timeLeft <= 0`: gọi `onSessionComplete()` callback
   - [x] Handle auto-switch: khi focus kết thúc → switch sang break; break kết thúc → switch sang focus
-  - [ ] Update `document.title` theo thời gian còn lại: `"25:00 — Focusly"`
-- [ ] `src/components/timer/TimerDisplay.tsx`:
-  - [ ] Hiển thị thời gian dạng `MM:SS` với font monospace lớn
-  - [ ] Animation nhẹ khi chuyển giữa các giây (opacity flicker nhỏ)
-  - [ ] Màu chữ thay đổi: focus → accent tím, break → accent teal
-- [ ] `src/components/timer/TimerControls.tsx`:
-  - [ ] Nút **Start**: hiển thị khi idle
-  - [ ] Nút **Pause / Resume**: hiển thị khi running hoặc paused
-  - [ ] Nút **Reset**: luôn hiển thị khi không idle, có confirm nhanh (tooltip hoặc double-click)
-  - [ ] Keyboard shortcut: `Space` = Start/Pause, `R` = Reset
-- [ ] `src/components/timer/SessionStatus.tsx`:
-  - [ ] Label lớn: `FOCUS` hoặc `BREAK`
-  - [ ] Sub-label: `"Phiên thứ X hôm nay"` dựa vào số session đã hoàn thành
-- [ ] Wire timer vào `timerStore` và `sessionStore`:
-  - [ ] Khi focus session hoàn thành: tạo `Session` object, gọi `sessionStore.addSession()`
-  - [ ] Sau khi add session: gọi `streakStore.updateStreak()`
-  - [ ] Emit notification (xử lý ở task 4.4)
-- [ ] Lắp ráp `TimerPage.tsx` hoàn chỉnh: Timer + Controls + Status + Quote
+  - [x] Update `document.title` theo thời gian còn lại: `"25:00 — Focusly"`
+- [x] `src/components/timer/TimerDisplay.tsx`:
+  - [x] Hiển thị thời gian dạng `MM:SS` với font monospace lớn
+  - [x] Animation nhẹ khi chuyển giữa các giây (opacity flicker nhỏ)
+  - [x] Màu chữ thay đổi: focus → accent tím, break → accent teal
+- [x] `src/components/timer/TimerControls.tsx`:
+  - [x] Nút **Start**: hiển thị khi idle
+  - [x] Nút **Pause / Resume**: hiển thị khi running hoặc paused
+  - [x] Nút **Reset**: luôn hiển thị khi không idle, có confirm nhanh (tooltip hoặc double-click)
+  - [x] Keyboard shortcut: `Space` = Start/Pause, `R` = Reset
+- [x] `src/components/timer/SessionStatus.tsx`:
+  - [x] Label lớn: `FOCUS` hoặc `BREAK`
+  - [x] Sub-label: `"Phiên thứ X hôm nay"` dựa vào số session đã hoàn thành
+- [x] Wire timer vào `timerStore` và `sessionStore`:
+  - [x] Khi focus session hoàn thành: tạo `Session` object, gọi `sessionStore.addSession()`
+  - [x] Sau khi add session: gọi `streakStore.updateStreak()`
+  - [x] Emit notification (xử lý ở task 4.4)
+- [x] Lắp ráp `TimerPage.tsx` hoàn chỉnh: Timer + Controls + Status + Quote
 
 ### 4.2 Daily Goal & Progress Ring *(P0)*
 
