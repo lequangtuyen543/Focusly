@@ -1,13 +1,16 @@
 import React from 'react';
 import { useTimerStore } from '@/store/timerStore';
 import { useSessionStore } from '@/store/sessionStore';
+import { isToday } from '@/utils/dateUtils';
 
 const SessionStatus: React.FC = () => {
   const mode = useTimerStore((s) => s.mode);
-  const todaySessions = useSessionStore((s) => s.getTodaySessions());
+  // Use a primitive selector to avoid infinite loop from new array refs
+  const todayCompletedFocusCount = useSessionStore(
+    (s) => s.sessions.filter((session) => session.type === 'focus' && session.completed && isToday(session.startTime)).length
+  );
 
-  // session number for the next session (1-based)
-  const sessionNumber = todaySessions.filter((s) => s.type === 'focus' && s.completed).length + 1;
+  const sessionNumber = todayCompletedFocusCount + 1;
 
   return (
     <div className="flex flex-col items-center">

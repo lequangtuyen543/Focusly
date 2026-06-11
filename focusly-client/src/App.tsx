@@ -1,16 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useAppStore } from '@/store/appStore'
-import { OnboardingFlow } from '@/components/onboarding/OnboardingFlow'
 import { Layout } from '@/components/layout/Layout'
 import { TimerPage, StatsPage, HistoryPage, SettingsPage } from '@/pages'
 
 function App() {
-  const { isOnboardingCompleted } = useAppStore()
-
-  if (!isOnboardingCompleted) {
-    return <OnboardingFlow />
-  }
-
   return (
     <BrowserRouter>
       <Routes>
