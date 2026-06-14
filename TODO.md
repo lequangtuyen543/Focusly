@@ -234,10 +234,10 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 4.5 Session History *(P1)*
 
-- [ ] `src/components/history/SessionItem.tsx`:
-  - [ ] Hiển thị: icon (🍅 focus / ☕ break) · thời gian bắt đầu → kết thúc · thời lượng
-  - [ ] Màu phân biệt: focus → tím nhạt, break → teal nhạt (background row)
-  - [ ] Hiển thị badge `Hoàn thành` hoặc `Huỷ` nếu `completed = false`
+- [x] `src/components/history/SessionItem.tsx`:
+  - [x] Hiển thị: icon (🍅 focus / ☕ break) · thời gian bắt đầu → kết thúc · thời lượng
+  - [x] Màu phân biệt: focus → tím nhạt, break → teal nhạt (background row)
+  - [x] Hiển thị badge `Hoàn thành` hoặc `Huỷ` nếu `completed = false`
 - [ ] `src/components/history/SessionList.tsx`:
   - [ ] Group sessions theo ngày: header ngày + danh sách sessions trong ngày đó
   - [ ] Hiển thị tối đa 20 sessions gần nhất (không cần pagination cho MVP)
