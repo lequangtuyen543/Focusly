@@ -221,14 +221,14 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 4.4 Browser Notification & Audio *(P1)*
 
-- [ ] `src/hooks/useNotification.ts`:
-  - [ ] `requestPermission()`: xin quyền khi user lần đầu nhấn Start
-  - [ ] `sendNotification(title, body)`: gửi notification nếu được cấp quyền
-  - [ ] Không gửi notification nếu tab đang active (người dùng đang nhìn app)
-- [ ] Web Audio API beep (fallback):
-  - [ ] `src/utils/audio.ts`: `playBeep(frequency, duration)` dùng `AudioContext`
-  - [ ] Beep ngắn khi focus kết thúc, beep khác (tone khác) khi break kết thúc
-  - [ ] Không cần file âm thanh — generate programmatically
+- [x] `src/hooks/useNotification.ts`:
+  - [x] `requestPermission()`: xin quyền khi user lần đầu nhấn Start
+  - [x] `sendNotification(title, body)`: gửi notification nếu được cấp quyền
+  - [x] Không gửi notification nếu tab đang active (người dùng đang nhìn app)
+- [x] Web Audio API beep (fallback):
+  - [x] `src/utils/audio.ts`: `playBeep(frequency, duration)` dùng `AudioContext`
+  - [x] Beep ngắn khi focus kết thúc, beep khác (tone khác) khi break kết thúc
+  - [x] Không cần file âm thanh — generate programmatically
 - [ ] Logic ưu tiên: notification trước → nếu bị block → fallback sang beep
 - [ ] `settingsStore` lưu preference: `notificationEnabled`, `soundEnabled`
 
