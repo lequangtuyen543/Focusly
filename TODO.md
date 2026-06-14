@@ -208,16 +208,16 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Khi đạt 100%: animation pulse nhẹ + text "Hoàn thành!" thay vì số
 - [x] Tích hợp vào `TimerPage`: đặt cạnh Timer Display tạo "bộ đôi" trực quan
 - [x] Daily goal reset tự động: kiểm tra ngày khi app load, so sánh với `lastActiveDate` trong store
-- [ ] Verify: hoàn thành 1 Pomodoro → progress ring cập nhật ngay lập tức
+- [x] Verify: hoàn thành 1 Pomodoro → progress ring cập nhật ngay lập tức
 
 ### 4.3 Focus Quote *(P2)*
 
-- [ ] `src/components/timer/FocusQuote.tsx`:
-  - [ ] Lấy quote ngẫu nhiên từ `quotes.ts` khi component mount
-  - [ ] Hiển thị ở vùng phụ (trên hoặc dưới timer, không che khuất)
-  - [ ] Nút nhỏ "↻" để refresh sang quote khác
-  - [ ] Text nhỏ, màu muted, italic — không gây xao nhãng
-  - [ ] Fade-in animation khi hiện quote mới
+- [x] `src/components/timer/FocusQuote.tsx`:
+  - [x] Lấy quote ngẫu nhiên từ `quotes.ts` khi component mount
+  - [x] Hiển thị ở vùng phụ (trên hoặc dưới timer, không che khuất)
+  - [x] Nút nhỏ "↻" để refresh sang quote khác
+  - [x] Text nhỏ, màu muted, italic — không gây xao nhãng
+  - [x] Fade-in animation khi hiện quote mới
 
 ### 4.4 Browser Notification & Audio *(P1)*
 

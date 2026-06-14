@@ -3,13 +3,13 @@ import { SessionStatus, TimerDisplay, TimerControls } from '@/components/timer';
 import { isToday } from '@/utils/dateUtils';
 import DailyProgress from '@/components/timer/DailyProgress';
 import useTimer from '@/hooks/useTimer';
-import { getRandomQuote } from '@/data/quotes';
+import FocusQuote from '@/components/timer/FocusQuote';
 import { useSessionStore } from '@/store/sessionStore';
 import { useStreakStore } from '@/store/streakStore';
 import { useTimerStore } from '@/store/timerStore';
 
 function TimerPage() {
-  const [quote, setQuote] = useState(() => getRandomQuote());
+  
   const sessionStore = useSessionStore();
   const streakStore = useStreakStore();
 
@@ -95,21 +95,7 @@ function TimerPage() {
         </div>
       </section>
 
-      {/* Quote card */}
-      <section className="w-full max-w-md mx-auto mt-8">
-        <div className="bg-off-white rounded-xl p-6 border border-outline-variant/10 shadow-card">
-          <div className="font-caption text-caption text-medium-gray mb-2">Focus Quote</div>
-          <div className="font-body text-body text-dark-charcoal">{quote}</div>
-          <div className="mt-4 flex justify-end">
-            <button
-              className="text-caption text-medium-gray hover:text-cofounder-blue"
-              onClick={() => setQuote(getRandomQuote())}
-            >
-              Refresh
-            </button>
-          </div>
-        </div>
-      </section>
+      <FocusQuote />
     </div>
   );
 }
