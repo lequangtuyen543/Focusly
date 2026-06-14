@@ -201,13 +201,13 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 4.2 Daily Goal & Progress Ring *(P0)*
 
-- [ ] `src/components/timer/DailyProgress.tsx`:
-  - [ ] Sử dụng `ProgressRing` đã build ở Phase 3
-  - [ ] Hiển thị `X / Y` Pomodoros (số hoàn thành / goal)
-  - [ ] Màu ring thay đổi theo %: `< 50%` → neutral, `50–99%` → accent tím, `100%` → xanh lá (completed)
-  - [ ] Khi đạt 100%: animation pulse nhẹ + text "Hoàn thành!" thay vì số
-- [ ] Tích hợp vào `TimerPage`: đặt cạnh Timer Display tạo "bộ đôi" trực quan
-- [ ] Daily goal reset tự động: kiểm tra ngày khi app load, so sánh với `lastActiveDate` trong store
+- [x] `src/components/timer/DailyProgress.tsx`:
+  - [x] Sử dụng `ProgressRing` đã build ở Phase 3
+  - [x] Hiển thị `X / Y` Pomodoros (số hoàn thành / goal)
+  - [x] Màu ring thay đổi theo %: `< 50%` → neutral, `50–99%` → accent tím, `100%` → xanh lá (completed)
+  - [x] Khi đạt 100%: animation pulse nhẹ + text "Hoàn thành!" thay vì số
+- [x] Tích hợp vào `TimerPage`: đặt cạnh Timer Display tạo "bộ đôi" trực quan
+- [x] Daily goal reset tự động: kiểm tra ngày khi app load, so sánh với `lastActiveDate` trong store
 - [ ] Verify: hoàn thành 1 Pomodoro → progress ring cập nhật ngay lập tức
 
 ### 4.3 Focus Quote *(P2)*

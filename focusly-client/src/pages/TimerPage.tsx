@@ -1,5 +1,7 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { SessionStatus, TimerDisplay, TimerControls } from '@/components/timer';
+import { isToday } from '@/utils/dateUtils';
+import DailyProgress from '@/components/timer/DailyProgress';
 import useTimer from '@/hooks/useTimer';
 import { getRandomQuote } from '@/data/quotes';
 import { useSessionStore } from '@/store/sessionStore';
@@ -10,6 +12,26 @@ function TimerPage() {
   const [quote, setQuote] = useState(() => getRandomQuote());
   const sessionStore = useSessionStore();
   const streakStore = useStreakStore();
+
+  // On app load, ensure streak/daily calculations are refreshed if day changed
+  useEffect(() => {
+    try {
+      const lastActive = streakStore.streak?.lastActiveDate ?? '';
+      // if lastActive is not today, recalculate streaks based on persisted sessions
+      if (lastActive && !isToday(lastActive)) {
+        streakStore.updateStreak(sessionStore.sessions);
+      }
+      // if no lastActive (fresh), still run an update to initialize
+      if (!lastActive) {
+        streakStore.updateStreak(sessionStore.sessions);
+      }
+    } catch (e) {
+      // defensive: ignore initialization errors
+      // (no UI changes required)
+    }
+    // run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   const onSessionComplete = useCallback((mode: 'focus' | 'break') => {
@@ -60,6 +82,11 @@ function TimerPage() {
             <TimerDisplay />
             <span className="font-body text-body text-slate-gray">Pomodoro</span>
           </div>
+        </div>
+
+        {/* Daily progress ring placed beside the timer on md+ screens; absolute so layout unchanged */}
+        <div className="hidden md:block absolute right-[-72px] top-1/2 -translate-y-1/2">
+          <DailyProgress size={96} />
         </div>
 
         {/* Controls */}
