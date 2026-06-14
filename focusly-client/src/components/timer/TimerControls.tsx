@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { useTimerStore } from '@/store/timerStore';
+import { useSettingsStore } from '@/store/settingsStore';
+import { requestPermission } from '@/hooks/useNotification';
+import { getFromStorage, saveToStorage } from '@/utils/storage';
 
 const RESET_CONFIRM_MS = 1500;
 
@@ -10,6 +13,8 @@ const TimerControls: React.FC = () => {
   const pause = useTimerStore((s) => s.pause);
   const resume = useTimerStore((s) => s.resume);
   const reset = useTimerStore((s) => s.reset);
+
+  const notificationEnabled = useSettingsStore((s) => s.settings.notificationEnabled);
 
   const [confirmingReset, setConfirmingReset] = useState(false);
   const confirmTimerRef = React.useRef<number | null>(null);
@@ -32,6 +37,20 @@ const TimerControls: React.FC = () => {
     }
   }, [confirmingReset, reset, clearConfirm]);
 
+  const handleStart = useCallback(() => {
+    try {
+      const alreadyRequested = getFromStorage<boolean>('notification_permission_requested', false);
+      if (notificationEnabled && !alreadyRequested) {
+        saveToStorage('notification_permission_requested', true);
+        void requestPermission();
+      }
+    } catch (e) {
+      // ignore storage errors
+    }
+
+    start();
+  }, [notificationEnabled, start]);
+
   // Keyboard shortcuts: Space = Start/Pause toggle, R = Reset (with confirmation)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -41,7 +60,7 @@ const TimerControls: React.FC = () => {
 
       if (e.code === 'Space') {
         e.preventDefault();
-        if (status === 'idle') start();
+        if (status === 'idle') handleStart();
         else if (status === 'running') pause();
         else if (status === 'paused') resume();
       }
@@ -54,7 +73,7 @@ const TimerControls: React.FC = () => {
 
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [status, start, pause, resume, handleResetClick]);
+  }, [status, handleStart, pause, resume, handleResetClick]);
 
   useEffect(() => {
     return () => clearConfirm();
@@ -63,7 +82,7 @@ const TimerControls: React.FC = () => {
   return (
     <div className="flex items-center gap-4">
       {status === 'idle' && (
-        <Button variant="primary" size="lg" onClick={start}>
+        <Button variant="primary" size="lg" onClick={handleStart}>
           Start
         </Button>
       )}

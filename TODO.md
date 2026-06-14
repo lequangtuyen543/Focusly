@@ -229,8 +229,8 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] `src/utils/audio.ts`: `playBeep(frequency, duration)` dùng `AudioContext`
   - [x] Beep ngắn khi focus kết thúc, beep khác (tone khác) khi break kết thúc
   - [x] Không cần file âm thanh — generate programmatically
-- [ ] Logic ưu tiên: notification trước → nếu bị block → fallback sang beep
-- [ ] `settingsStore` lưu preference: `notificationEnabled`, `soundEnabled`
+- [x] Logic ưu tiên: notification trước → nếu bị block → fallback sang beep
+- [x] `settingsStore` lưu preference: `notificationEnabled`, `soundEnabled`
 
 ### 4.5 Session History *(P1)*
 

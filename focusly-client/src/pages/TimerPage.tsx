@@ -7,6 +7,9 @@ import FocusQuote from '@/components/timer/FocusQuote';
 import { useSessionStore } from '@/store/sessionStore';
 import { useStreakStore } from '@/store/streakStore';
 import { useTimerStore } from '@/store/timerStore';
+import { useSettingsStore } from '@/store/settingsStore';
+import { sendNotification } from '@/hooks/useNotification';
+import { playFocusCompleteBeep, playBreakCompleteBeep } from '@/utils/audio';
 
 function TimerPage() {
   
@@ -55,7 +58,31 @@ function TimerPage() {
       // update streak using the latest sessions
       streakStore.updateStreak(useSessionStore.getState().sessions);
 
-      // TODO: trigger notification / sound (handled elsewhere)
+      // Notification / audio handling
+      try {
+        const { notificationEnabled, soundEnabled } = useSettingsStore.getState().settings;
+
+        const title = mode === 'focus' ? 'Focus Session Complete' : 'Break Complete';
+        const body = mode === 'focus' ? 'Time for a break.' : 'Ready to focus again.';
+
+        if (notificationEnabled) {
+          const canNotify = typeof Notification !== 'undefined' && Notification.permission === 'granted' && typeof document !== 'undefined' && document.hidden;
+          if (canNotify) {
+            sendNotification(title, body);
+          } else if (soundEnabled) {
+            if (mode === 'focus') playFocusCompleteBeep();
+            else playBreakCompleteBeep();
+          }
+        } else {
+          // notifications disabled — fallback to sound only if enabled
+          if (soundEnabled) {
+            if (mode === 'focus') playFocusCompleteBeep();
+            else playBreakCompleteBeep();
+          }
+        }
+      } catch (e) {
+        // swallow any errors in notification/audio logic
+      }
     },
     [sessionStore, streakStore],
   );
