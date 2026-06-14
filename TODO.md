@@ -238,11 +238,11 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Hiển thị: icon (🍅 focus / ☕ break) · thời gian bắt đầu → kết thúc · thời lượng
   - [x] Màu phân biệt: focus → tím nhạt, break → teal nhạt (background row)
   - [x] Hiển thị badge `Hoàn thành` hoặc `Huỷ` nếu `completed = false`
-- [ ] `src/components/history/SessionList.tsx`:
-  - [ ] Group sessions theo ngày: header ngày + danh sách sessions trong ngày đó
-  - [ ] Hiển thị tối đa 20 sessions gần nhất (không cần pagination cho MVP)
-  - [ ] Empty state khi chưa có session nào
-  - [ ] Pull-to-refresh không cần thiết (data đã real-time từ store)
+- [x] `src/components/history/SessionList.tsx`:
+  - [x] Group sessions theo ngày: header ngày + danh sách sessions trong ngày đó
+  - [x] Hiển thị tối đa 20 sessions gần nhất (không cần pagination cho MVP)
+  - [x] Empty state khi chưa có session nào
+  - [x] Pull-to-refresh không cần thiết (data đã real-time từ store)
 - [ ] Lắp ráp `HistoryPage.tsx`: SessionList đầy đủ
 
 ### 4.6 Statistics Dashboard *(P1)*
