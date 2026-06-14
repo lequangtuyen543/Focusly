@@ -243,7 +243,7 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Hiển thị tối đa 20 sessions gần nhất (không cần pagination cho MVP)
   - [x] Empty state khi chưa có session nào
   - [x] Pull-to-refresh không cần thiết (data đã real-time từ store)
-- [ ] Lắp ráp `HistoryPage.tsx`: SessionList đầy đủ
+- [x] Lắp ráp `HistoryPage.tsx`: SessionList đầy đủ
 
 ### 4.6 Statistics Dashboard *(P1)*
 
