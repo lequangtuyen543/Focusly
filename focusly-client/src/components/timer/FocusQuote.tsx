@@ -44,7 +44,7 @@ const FocusQuote: React.FC = () => {
         <div className="font-caption text-caption text-medium-gray mb-2">Focus Quote</div>
 
         <div
-          className={`font-caption text-caption text-medium-gray italic text-center transition-opacity duration-300 motion-reduce:transition-none ${
+          className={`font-caption text-caption text-medium-gray italic text-center transition-opacity duration-300 motion-reduce:transition-none min-h-[3rem] flex items-center justify-center ${
             visible ? 'opacity-100' : 'opacity-0'
           }`}
           aria-live="polite"

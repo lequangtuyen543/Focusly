@@ -295,10 +295,10 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] Timer bắt đầu: progress ring bắt đầu quay, background có subtle color shift
 - [x] Focus → Break switch: màu accent transition smooth (CSS transition 0.5s)
 - [x] Pomodoro hoàn thành: progress ring fill lên 100% → pulse animation → reset
-- [ ] Streak tăng: badge animate `bounceIn` nhẹ
-- [ ] Quote refresh: fade-out → fade-in
-- [ ] Button hover: `scale(1.02)` + shadow tăng nhẹ
-- [ ] Tất cả animation: `prefers-reduced-motion: reduce` → tắt animation, chỉ giữ transition instant
+- [x] Streak tăng: badge animate `bounceIn` nhẹ
+- [x] Quote refresh: fade-out → fade-in
+- [x] Button hover: `scale(1.02)` + shadow tăng nhẹ
+- [x] Tất cả animation: `prefers-reduced-motion: reduce` → tắt animation, chỉ giữ transition instant
 
 ### 5.2 Dark Mode
 

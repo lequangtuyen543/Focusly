@@ -29,8 +29,8 @@ const StreakDisplay: React.FC<StreakDisplayProps> = ({ currentStreak, bestStreak
         
         <div 
           className={cn(
-            'text-6xl font-bold text-dark-charcoal font-mono transition-transform duration-300',
-            animate && 'scale-110'
+            'text-6xl font-bold text-dark-charcoal font-mono motion-reduce:animate-none',
+            animate && 'animate-bounce-in'
           )}
         >
           {currentStreak}

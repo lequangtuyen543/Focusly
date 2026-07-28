@@ -40,10 +40,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || loading}
         className={cn(
-          'inline-flex items-center justify-center rounded transition-all duration-150',
+          'inline-flex items-center justify-center rounded transition-all duration-150 motion-reduce:transition-none',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cofounder-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas-white',
           'disabled:pointer-events-none disabled:opacity-50',
-          'active:scale-[0.98]',
+          'hover:scale-[1.02] hover:shadow-md active:scale-[0.98]',
           variantStyles[variant],
           sizeStyles[size],
           className,
