@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { useSettingsStore } from '@/store/settingsStore';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 function SettingsPage() {
-  const [focusDuration, setFocusDuration] = useState(25)
-  const [shortBreak, setShortBreak] = useState(5)
-  const [longBreak, setLongBreak] = useState(15)
-  const [dailyGoal, setDailyGoal] = useState(8)
-  const [pushNotifications, setPushNotifications] = useState(true)
-  const [audioCues, setAudioCues] = useState(false)
-  const [strictMode, setStrictMode] = useState(false)
+  const { settings, updateSettings, resetSettings } = useSettingsStore();
+  const [strictMode, setStrictMode] = useState(false);
 
   return (
     <div className="flex flex-col gap-section-gap">
@@ -27,42 +30,42 @@ function SettingsPage() {
             <h2 className="font-heading text-heading-lg text-dark-charcoal mb-1">Timer Durations</h2>
             <p className="font-body text-body text-medium-gray">Define the temporal blocks for your sessions.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label className="font-button-label text-button-label text-slate-gray">Focus Block</label>
-              <div className="relative">
-                <input
-                  className="w-full bg-ash-gray border border-slate-gray text-dark-charcoal font-subheading text-subheading px-4 py-3 rounded-none focus:outline-none focus:border-dark-charcoal focus:ring-1 focus:ring-dark-charcoal transition-all"
-                  type="number"
-                  value={focusDuration}
-                  onChange={(e) => setFocusDuration(Number(e.target.value))}
-                />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-medium-gray font-caption text-caption">min</span>
-              </div>
+              <Select 
+                value={String(settings.focusDuration / 60)} 
+                onValueChange={(val) => updateSettings({ focusDuration: Number(val) * 60 })}
+              >
+                <SelectTrigger className="w-full bg-ash-gray border border-slate-gray rounded-none py-3 px-4 h-auto font-subheading text-subheading focus-visible:border-dark-charcoal focus-visible:ring-1 focus-visible:ring-dark-charcoal">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="15">15 min</SelectItem>
+                  <SelectItem value="20">20 min</SelectItem>
+                  <SelectItem value="25">25 min</SelectItem>
+                  <SelectItem value="30">30 min</SelectItem>
+                  <SelectItem value="45">45 min</SelectItem>
+                  <SelectItem value="50">50 min</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-button-label text-button-label text-slate-gray">Short Break</label>
-              <div className="relative">
-                <input
-                  className="w-full bg-ash-gray border border-slate-gray text-dark-charcoal font-subheading text-subheading px-4 py-3 rounded-none focus:outline-none focus:border-dark-charcoal focus:ring-1 focus:ring-dark-charcoal transition-all"
-                  type="number"
-                  value={shortBreak}
-                  onChange={(e) => setShortBreak(Number(e.target.value))}
-                />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-medium-gray font-caption text-caption">min</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="font-button-label text-button-label text-slate-gray">Long Break</label>
-              <div className="relative">
-                <input
-                  className="w-full bg-ash-gray border border-slate-gray text-dark-charcoal font-subheading text-subheading px-4 py-3 rounded-none focus:outline-none focus:border-dark-charcoal focus:ring-1 focus:ring-dark-charcoal transition-all"
-                  type="number"
-                  value={longBreak}
-                  onChange={(e) => setLongBreak(Number(e.target.value))}
-                />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-medium-gray font-caption text-caption">min</span>
-              </div>
+              <label className="font-button-label text-button-label text-slate-gray">Break</label>
+              <Select 
+                value={String(settings.breakDuration / 60)} 
+                onValueChange={(val) => updateSettings({ breakDuration: Number(val) * 60 })}
+              >
+                <SelectTrigger className="w-full bg-ash-gray border border-slate-gray rounded-none py-3 px-4 h-auto font-subheading text-subheading focus-visible:border-dark-charcoal focus-visible:ring-1 focus-visible:ring-dark-charcoal">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="3">3 min</SelectItem>
+                  <SelectItem value="5">5 min</SelectItem>
+                  <SelectItem value="10">10 min</SelectItem>
+                  <SelectItem value="15">15 min</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </section>
@@ -75,14 +78,43 @@ function SettingsPage() {
             <h2 className="font-heading text-heading-lg text-dark-charcoal mb-1">Daily Goal</h2>
             <p className="font-body text-body text-medium-gray">Target number of focus blocks per day.</p>
           </div>
-          <div className="w-full md:w-48 relative">
+          <div className="w-full md:w-48 relative flex items-center bg-ash-gray border border-slate-gray transition-all focus-within:border-dark-charcoal focus-within:ring-1 focus-within:ring-dark-charcoal">
+            <button 
+               className="px-4 py-3 text-slate-gray hover:text-dark-charcoal focus:outline-none" 
+               onClick={() => updateSettings({ dailyGoal: Math.max(1, settings.dailyGoal - 1) })}
+               type="button"
+            >
+              −
+            </button>
             <input
-              className="w-full bg-ash-gray border border-slate-gray text-dark-charcoal font-subheading text-subheading px-4 py-3 rounded-none focus:outline-none focus:border-dark-charcoal focus:ring-1 focus:ring-dark-charcoal transition-all text-center"
+              className="w-full bg-transparent text-dark-charcoal font-subheading text-subheading py-3 text-center focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               type="number"
-              value={dailyGoal}
-              onChange={(e) => setDailyGoal(Number(e.target.value))}
+              min={1}
+              max={20}
+              value={settings.dailyGoal || ''}
+              onChange={(e) => {
+                const val = parseInt(e.target.value, 10);
+                if (!isNaN(val)) {
+                  updateSettings({ dailyGoal: val });
+                } else if (e.target.value === '') {
+                  // Allow temporary empty state when clearing input
+                  updateSettings({ dailyGoal: 0 as any }); 
+                }
+              }}
+              onBlur={() => {
+                let val = settings.dailyGoal;
+                if (isNaN(val) || val < 1) val = 1;
+                if (val > 20) val = 20;
+                updateSettings({ dailyGoal: val });
+              }}
             />
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-medium-gray font-caption text-caption">blocks</span>
+            <button 
+               className="px-4 py-3 text-slate-gray hover:text-dark-charcoal focus:outline-none" 
+               onClick={() => updateSettings({ dailyGoal: Math.min(20, (settings.dailyGoal || 0) + 1) })}
+               type="button"
+            >
+              +
+            </button>
           </div>
         </section>
 
@@ -101,15 +133,17 @@ function SettingsPage() {
                 <p className="font-caption text-caption text-medium-gray">Alerts when a block completes.</p>
               </div>
               <button
-                aria-checked={pushNotifications}
-                className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-action-azure transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-action-azure focus:ring-offset-2"
+                aria-checked={settings.notificationEnabled}
+                className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-action-azure focus:ring-offset-2 ${
+                  settings.notificationEnabled ? 'bg-action-azure' : 'bg-outline-variant'
+                }`}
                 role="switch"
                 type="button"
-                onClick={() => setPushNotifications(!pushNotifications)}
+                onClick={() => updateSettings({ notificationEnabled: !settings.notificationEnabled })}
               >
                 <span
                   className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-white shadow ring-0 transition duration-200 ease-in-out ${
-                    pushNotifications ? 'translate-x-5' : 'translate-x-0'
+                    settings.notificationEnabled ? 'translate-x-5' : 'translate-x-0'
                   }`}
                 />
               </button>
@@ -120,15 +154,17 @@ function SettingsPage() {
                 <p className="font-caption text-caption text-medium-gray">Subtle chimes for state transitions.</p>
               </div>
               <button
-                aria-checked={audioCues}
-                className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-outline-variant transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-action-azure focus:ring-offset-2"
+                aria-checked={settings.soundEnabled}
+                className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-action-azure focus:ring-offset-2 ${
+                  settings.soundEnabled ? 'bg-action-azure' : 'bg-outline-variant'
+                }`}
                 role="switch"
                 type="button"
-                onClick={() => setAudioCues(!audioCues)}
+                onClick={() => updateSettings({ soundEnabled: !settings.soundEnabled })}
               >
                 <span
                   className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-white shadow ring-0 transition duration-200 ease-in-out ${
-                    audioCues ? 'translate-x-5' : 'translate-x-0'
+                    settings.soundEnabled ? 'translate-x-5' : 'translate-x-0'
                   }`}
                 />
               </button>
@@ -140,7 +176,9 @@ function SettingsPage() {
               </div>
               <button
                 aria-checked={strictMode}
-                className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-outline-variant transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-action-azure focus:ring-offset-2"
+                className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-action-azure focus:ring-offset-2 ${
+                  strictMode ? 'bg-action-azure' : 'bg-outline-variant'
+                }`}
                 role="switch"
                 type="button"
                 onClick={() => setStrictMode(!strictMode)}
@@ -166,14 +204,17 @@ function SettingsPage() {
             </p>
           </div>
           <div>
-            <button className="bg-transparent text-error border border-error/50 hover:bg-error/10 font-button-label text-button-label rounded-sm px-6 py-2 transition-all">
+            <button 
+              className="bg-transparent text-error border border-error/50 hover:bg-error/10 font-button-label text-button-label rounded-sm px-6 py-2 transition-all"
+              onClick={resetSettings}
+            >
               Clear Data
             </button>
           </div>
         </section>
       </div>
     </div>
-  )
+  );
 }
 
-export default SettingsPage
+export default SettingsPage;

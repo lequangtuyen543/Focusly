@@ -272,9 +272,9 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 4.7 Settings *(P1)*
 
-- [ ] `SettingsPage.tsx`:
-  - [ ] **Daily Goal**: number input (1–20), mặc định 8, có nút +/- tiện dụng
-  - [ ] **Focus Duration**: select hoặc input (mặc định 25 phút, options: 15, 20, 25, 30, 45, 50)
+- [x] `SettingsPage.tsx`:
+  - [x] **Daily Goal**: number input (1–20), mặc định 8, có nút +/- tiện dụng
+  - [x] **Focus Duration**: select hoặc input (mặc định 25 phút, options: 15, 20, 25, 30, 45, 50)
   - [ ] **Break Duration**: select (mặc định 5 phút, options: 3, 5, 10, 15)
   - [ ] **Notification**: toggle on/off
   - [ ] **Sound**: toggle on/off
