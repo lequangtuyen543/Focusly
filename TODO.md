@@ -262,10 +262,10 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Responsive: `<ResponsiveContainer width="100%">`
   - [x] Tooltip khi hover: `"3 Pomodoros – Thứ Hai 11/05"`
   - [x] Custom styling phù hợp dark theme (axis color, grid color)
-- [ ] `src/components/stats/TodaySummary.tsx`:
-  - [ ] Tổng focus time hôm nay (giờ:phút)
-  - [ ] Số Pomodoro hôm nay / goal
-  - [ ] Inline mini progress bar
+- [x] `src/components/stats/TodaySummary.tsx`:
+  - [x] Tổng focus time hôm nay (giờ:phút)
+  - [x] Số Pomodoro hôm nay / goal
+  - [x] Inline mini progress bar
 - [ ] Lắp ráp `StatsPage.tsx`:
   - [ ] Layout: TodaySummary → WeeklyChart → StreakDisplay → StatCards (tổng all-time)
   - [ ] Data tính toán từ `sessionStore` và `streakStore`
