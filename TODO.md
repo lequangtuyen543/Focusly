@@ -275,12 +275,12 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] `SettingsPage.tsx`:
   - [x] **Daily Goal**: number input (1–20), mặc định 8, có nút +/- tiện dụng
   - [x] **Focus Duration**: select hoặc input (mặc định 25 phút, options: 15, 20, 25, 30, 45, 50)
-  - [ ] **Break Duration**: select (mặc định 5 phút, options: 3, 5, 10, 15)
-  - [ ] **Notification**: toggle on/off
-  - [ ] **Sound**: toggle on/off
-  - [ ] Thay đổi settings lưu ngay vào `settingsStore` (không cần nút Save riêng)
-  - [ ] Nút "Reset về mặc định" với confirm dialog
-  - [ ] Hiển thị app version ở cuối trang
+  - [x] **Break Duration**: select (mặc định 5 phút, options: 3, 5, 10, 15)
+  - [x] **Notification**: toggle on/off
+  - [x] **Sound**: toggle on/off
+  - [x] Thay đổi settings lưu ngay vào `settingsStore` (không cần nút Save riêng)
+  - [x] Nút "Reset về mặc định" với confirm dialog
+  - [x] Hiển thị app version ở cuối trang
 
 > **MVP note:** Settings trang đơn giản, không cần phức tạp. Mục tiêu là người dùng có thể tùy chỉnh goal và duration.
 

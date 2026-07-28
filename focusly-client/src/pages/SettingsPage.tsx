@@ -7,6 +7,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 function SettingsPage() {
   const { settings, updateSettings, resetSettings } = useSettingsStore();
@@ -204,14 +215,35 @@ function SettingsPage() {
             </p>
           </div>
           <div>
-            <button 
-              className="bg-transparent text-error border border-error/50 hover:bg-error/10 font-button-label text-button-label rounded-sm px-6 py-2 transition-all"
-              onClick={resetSettings}
-            >
-              Clear Data
-            </button>
+            <Dialog>
+              <DialogTrigger render={<Button variant="danger" />}>
+                Reset về mặc định
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Reset to Default</DialogTitle>
+                  <DialogDescription>
+                    Are you sure you want to reset all settings to default? This action cannot be undone.
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <DialogClose render={<Button variant="ghost" />}>
+                    Cancel
+                  </DialogClose>
+                  <DialogClose render={<Button variant="danger" onClick={resetSettings} />}>
+                    Confirm
+                  </DialogClose>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
+
+        <div className="flex justify-center pt-4 pb-2">
+          <p className="font-caption text-caption text-medium-gray">
+            Version 1.0.0
+          </p>
+        </div>
       </div>
     </div>
   );
