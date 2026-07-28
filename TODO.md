@@ -247,21 +247,21 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 4.6 Statistics Dashboard *(P1)*
 
-- [ ] `src/components/stats/StatCard.tsx`:
-  - [ ] Card hiển thị 1 metric: label + số lớn + optional sub-text
-  - [ ] Dùng cho: Tổng focus hôm nay, Tổng Pomodoro, Streak, Best streak
-- [ ] `src/components/stats/WeeklyChart.tsx`:
-  - [ ] Recharts `BarChart` — 7 cột tương ứng 7 ngày gần nhất
-  - [ ] Trục X: tên ngày ngắn (T2, T3, ..., CN) hoặc ngày/tháng
-  - [ ] Trục Y: số Pomodoro
-  - [ ] Cột của hôm nay highlight màu accent tím
-  - [ ] Responsive: `<ResponsiveContainer width="100%">`
-  - [ ] Tooltip khi hover: `"3 Pomodoros – Thứ Hai 11/05"`
-  - [ ] Custom styling phù hợp dark theme (axis color, grid color)
-- [ ] `src/components/stats/StreakDisplay.tsx`:
-  - [ ] Hiển thị current streak lớn với icon 🔥
-  - [ ] Sub-text: `"Kỷ lục: X ngày"`
-  - [ ] Animation nhỏ khi streak tăng (scale bounce)
+- [x] `src/components/stats/StatCard.tsx`:
+  - [x] Card hiển thị 1 metric: label + số lớn + optional sub-text
+  - [x] Dùng cho: Tổng focus hôm nay, Tổng Pomodoro, Streak, Best streak
+- [x] `src/components/stats/StreakDisplay.tsx`:
+  - [x] Hiển thị current streak lớn với icon 🔥
+  - [x] Sub-text: `"Kỷ lục: X ngày"`
+  - [x] Animation nhỏ khi streak tăng (scale bounce)
+- [x] `src/components/stats/WeeklyChart.tsx`:
+  - [x] Recharts `BarChart` — 7 cột tương ứng 7 ngày gần nhất
+  - [x] Trục X: tên ngày ngắn (T2, T3, ..., CN) hoặc ngày/tháng
+  - [x] Trục Y: số Pomodoro
+  - [x] Cột của hôm nay highlight màu accent tím
+  - [x] Responsive: `<ResponsiveContainer width="100%">`
+  - [x] Tooltip khi hover: `"3 Pomodoros – Thứ Hai 11/05"`
+  - [x] Custom styling phù hợp dark theme (axis color, grid color)
 - [ ] `src/components/stats/TodaySummary.tsx`:
   - [ ] Tổng focus time hôm nay (giờ:phút)
   - [ ] Số Pomodoro hôm nay / goal
