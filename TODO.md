@@ -266,9 +266,9 @@ Phase 10 → Deploy & Tài liệu hóa
   - [x] Tổng focus time hôm nay (giờ:phút)
   - [x] Số Pomodoro hôm nay / goal
   - [x] Inline mini progress bar
-- [ ] Lắp ráp `StatsPage.tsx`:
-  - [ ] Layout: TodaySummary → WeeklyChart → StreakDisplay → StatCards (tổng all-time)
-  - [ ] Data tính toán từ `sessionStore` và `streakStore`
+- [x] Lắp ráp `StatsPage.tsx`:
+  - [x] Layout: TodaySummary → WeeklyChart → StreakDisplay → StatCards (tổng all-time)
+  - [x] Data tính toán từ `sessionStore` và `streakStore`
 
 ### 4.7 Settings *(P1)*
 
