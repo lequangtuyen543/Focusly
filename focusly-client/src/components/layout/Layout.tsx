@@ -1,13 +1,23 @@
 import type { ReactNode } from 'react'
 import { Header } from './Header'
+import { useTimerStore } from '@/store/timerStore'
 
 interface LayoutProps {
   children: ReactNode
 }
 
 export function Layout({ children }: LayoutProps) {
+  const mode = useTimerStore((s) => s.mode);
+  const status = useTimerStore((s) => s.status);
+  
+  // Subtle background color shift depending on mode when running
+  // Use design tokens with low opacity for subtle effect
+  const bgClass = status === 'running'
+    ? mode === 'focus' ? 'bg-cofounder-blue/5' : 'bg-action-azure/5'
+    : 'bg-canvas-white';
+
   return (
-    <div className="min-h-screen bg-canvas-white text-dark-charcoal font-body flex flex-col">
+    <div className={`min-h-screen text-dark-charcoal font-body flex flex-col transition-colors duration-500 ease-in-out ${bgClass}`}>
       <Header />
       <main className="flex-1 w-full max-w-[1200px] mx-auto px-6 md:px-8 pt-32 pb-24">
         {children}

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { SessionStatus, TimerDisplay, TimerControls } from '@/components/timer';
 import { isToday } from '@/utils/dateUtils';
 import DailyProgress from '@/components/timer/DailyProgress';
@@ -10,6 +10,7 @@ import { useTimerStore } from '@/store/timerStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { sendNotification } from '@/hooks/useNotification';
 import { playFocusCompleteBeep, playBreakCompleteBeep } from '@/utils/audio';
+import { ProgressRing } from '@/components/ui/ProgressRing';
 
 function TimerPage() {
   
@@ -90,6 +91,28 @@ function TimerPage() {
   // start the timer engine with completion callback
   useTimer(onSessionComplete);
 
+  const timeLeft = useTimerStore((s) => s.timeLeft);
+  const mode = useTimerStore((s) => s.mode);
+  const status = useTimerStore((s) => s.status);
+  
+  const { focusDuration, breakDuration } = useSettingsStore((s) => s.settings);
+  const duration = mode === 'focus' ? focusDuration : breakDuration;
+  const progress = status === 'idle' ? 0 : Math.max(0, Math.min(100, ((duration - timeLeft) / duration) * 100));
+
+  const [pulsing, setPulsing] = useState(false);
+  const prevCompleteRef = useRef(false);
+
+  useEffect(() => {
+    const reached = progress >= 100;
+    if (reached && !prevCompleteRef.current) {
+      setPulsing(true);
+      const t = setTimeout(() => setPulsing(false), 700);
+      prevCompleteRef.current = true;
+      return () => clearTimeout(t);
+    }
+    if (!reached) prevCompleteRef.current = false;
+  }, [progress]);
+
   return (
     <div className="flex flex-col items-center gap-section-gap">
       {/* Greeting & Quote Header */}
@@ -102,7 +125,14 @@ function TimerPage() {
 
       {/* Timer Hero Section */}
       <section className="w-full max-w-md mx-auto relative flex flex-col items-center justify-center mt-8">
-        <div className="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center bg-off-white rounded-[40px] shadow-card border border-outline-variant/10">
+        <div className={`relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center bg-off-white rounded-[40px] shadow-card border border-outline-variant/10 transition-transform duration-300 ease-out ${pulsing ? 'scale-105' : 'scale-100'}`}>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
+             {/* Mobile ring */}
+             <ProgressRing value={progress} size={280} className="md:hidden" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
+             {/* Desktop ring */}
+             <ProgressRing value={progress} size={310} className="hidden md:inline-flex" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
+          </div>
+          
           {/* Timer Display (central) */}
           <div className="text-center z-10 flex flex-col items-center gap-4">
             <SessionStatus />
