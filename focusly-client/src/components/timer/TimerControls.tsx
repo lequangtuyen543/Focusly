@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
+
 import { useTimerStore } from '@/store/timerStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { requestPermission } from '@/hooks/useNotification';
@@ -80,35 +80,55 @@ const TimerControls: React.FC = () => {
   }, [clearConfirm]);
 
   return (
-    <div className="flex items-center gap-4">
-      {status === 'idle' && (
-        <Button variant="primary" size="lg" onClick={handleStart}>
-          Start
-        </Button>
-      )}
+    <div className="flex items-center gap-6 mt-12">
+      <button
+        onClick={status !== 'idle' ? handleResetClick : undefined}
+        disabled={status === 'idle'}
+        className={`w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 transition-colors ${
+          status === 'idle'
+            ? 'text-slate-gray opacity-50 cursor-not-allowed'
+            : confirmingReset
+            ? 'text-error border-error/50 hover:bg-error/10'
+            : 'text-slate-gray hover:bg-surface-container hover:text-primary'
+        }`}
+        title={confirmingReset ? 'Confirm Reset' : 'Reset'}
+      >
+        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>
+          restart_alt
+        </span>
+      </button>
 
-      {status === 'running' && (
-        <Button variant="secondary" size="lg" onClick={pause}>
-          Pause
-        </Button>
-      )}
-
-      {status === 'paused' && (
-        <Button variant="secondary" size="lg" onClick={resume}>
-          Resume
-        </Button>
-      )}
-
-      {status !== 'idle' && (
-        <Button
-          variant={confirmingReset ? 'danger' : 'ghost'}
-          size="md"
-          onClick={handleResetClick}
-          className="ml-2"
+      {status === 'running' ? (
+        <button
+          onClick={pause}
+          className="w-20 h-20 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-sm hover:scale-95 transition-transform"
+          title="Pause"
         >
-          {confirmingReset ? 'Confirm Reset' : 'Reset'}
-        </Button>
+          <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+            pause
+          </span>
+        </button>
+      ) : (
+        <button
+          onClick={status === 'idle' ? handleStart : resume}
+          className="w-20 h-20 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-sm hover:scale-95 transition-transform"
+          title={status === 'idle' ? 'Start' : 'Resume'}
+        >
+          <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+            play_arrow
+          </span>
+        </button>
       )}
+
+      <button
+        disabled
+        className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 text-slate-gray opacity-50 cursor-not-allowed transition-colors"
+        title="Skip Next"
+      >
+        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>
+          skip_next
+        </span>
+      </button>
     </div>
   );
 };
