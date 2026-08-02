@@ -56,7 +56,7 @@ const FocusQuote: React.FC = () => {
           <button
             type="button"
             aria-label="Refresh quote"
-            className="rounded text-caption text-cool-gray hover:text-cofounder-blue focus:outline-none focus:ring-2 focus:ring-cofounder-blue/30"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-caption text-cool-gray transition-colors hover:bg-rich-black/30 hover:text-cofounder-blue focus:outline-none focus:ring-2 focus:ring-cofounder-blue/30"
             onClick={handleRefresh}
           >
             ↻

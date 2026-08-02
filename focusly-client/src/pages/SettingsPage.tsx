@@ -32,7 +32,7 @@ function SettingsPage() {
         </p>
       </header>
 
-      <div className="flex flex-col gap-8 rounded-cards-lg border border-outline-variant/15 bg-rich-black/70 p-3 shadow-[0_4px_24px_rgba(0,0,0,0.35),0_1px_2px_rgba(0,0,0,0.2)] sm:p-6 md:p-8 lg:p-10 lg:gap-10">
+      <div className="flex flex-col gap-8 rounded-cards-lg border border-outline-variant/15 bg-rich-black/70 p-4 shadow-[0_4px_24px_rgba(0,0,0,0.35),0_1px_2px_rgba(0,0,0,0.2)] sm:p-6 md:p-8 lg:p-10 lg:gap-10">
         {/* Timer Durations */}
         <section className="flex flex-col gap-6" id="timers">
           <div>
@@ -46,7 +46,7 @@ function SettingsPage() {
                 value={String(settings.focusDuration / 60)} 
                 onValueChange={(val) => updateSettings({ focusDuration: Number(val) * 60 })}
               >
-                <SelectTrigger className="w-full bg-rich-black/60 border border-outline-variant/20 rounded-none py-3 px-4 h-auto font-subheading text-subheading text-canvas-white focus-visible:border-cofounder-blue focus-visible:ring-1 focus-visible:ring-cofounder-blue">
+                <SelectTrigger className="w-full bg-rich-black/60 border border-outline-variant/20 rounded-none py-3 px-4 data-[size=default]:h-auto font-subheading text-subheading text-canvas-white focus-visible:border-cofounder-blue focus-visible:ring-1 focus-visible:ring-cofounder-blue">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -65,7 +65,7 @@ function SettingsPage() {
                 value={String(settings.breakDuration / 60)} 
                 onValueChange={(val) => updateSettings({ breakDuration: Number(val) * 60 })}
               >
-                <SelectTrigger className="w-full bg-rich-black/60 border border-outline-variant/20 rounded-none py-3 px-4 h-auto font-subheading text-subheading text-canvas-white focus-visible:border-cofounder-blue focus-visible:ring-1 focus-visible:ring-cofounder-blue">
+                <SelectTrigger className="w-full bg-rich-black/60 border border-outline-variant/20 rounded-none py-3 px-4 data-[size=default]:h-auto font-subheading text-subheading text-canvas-white focus-visible:border-cofounder-blue focus-visible:ring-1 focus-visible:ring-cofounder-blue">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
