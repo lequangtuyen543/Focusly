@@ -11,7 +11,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          'bg-off-white rounded-cards-sm shadow-card',
+          'bg-rich-black/70 rounded-cards-sm shadow-card border border-outline-variant/15',
           'transition-shadow duration-300',
           hover && 'hover:shadow-lg cursor-pointer',
           className,
@@ -39,7 +39,7 @@ CardHeader.displayName = 'CardHeader';
 interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
 
 const CardTitle: React.FC<CardTitleProps> = ({ className, children, ...props }) => (
-  <h3 className={cn('text-subheading text-dark-charcoal', className)} {...props}>
+  <h3 className={cn('text-subheading text-canvas-white', className)} {...props}>
     {children}
   </h3>
 );
@@ -49,7 +49,7 @@ CardTitle.displayName = 'CardTitle';
 interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 const CardDescription: React.FC<CardDescriptionProps> = ({ className, children, ...props }) => (
-  <p className={cn('text-body text-medium-gray', className)} {...props}>
+  <p className={cn('text-body text-light-gray', className)} {...props}>
     {children}
   </p>
 );
@@ -69,7 +69,7 @@ CardContent.displayName = 'CardContent';
 interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const CardFooter: React.FC<CardFooterProps> = ({ className, children, ...props }) => (
-  <div className={cn('mt-4 pt-4 border-t border-cool-gray', className)} {...props}>
+  <div className={cn('mt-4 pt-4 border-t border-outline-variant/20', className)} {...props}>
     {children}
   </div>
 );

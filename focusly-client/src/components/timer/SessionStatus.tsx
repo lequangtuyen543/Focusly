@@ -17,7 +17,7 @@ const SessionStatus: React.FC = () => {
       <div className="px-3 py-1 rounded-full bg-cofounder-blue/10 text-cofounder-blue font-caption uppercase tracking-widest font-semibold">
         {mode === 'focus' ? 'FOCUS' : 'BREAK'}
       </div>
-      <div className="mt-2 text-body text-medium-gray">Session #{sessionNumber} today</div>
+      <div className="mt-2 text-body text-light-gray">Session #{sessionNumber} today</div>
     </div>
   );
 };

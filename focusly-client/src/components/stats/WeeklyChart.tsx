@@ -50,14 +50,14 @@ const WeeklyChart: React.FC<WeeklyChartProps> = ({ data, className }) => {
                   if (active && payload && payload.length) {
                     const d = payload[0].payload as WeeklyChartData;
                     return (
-                      <div className="bg-[#121216] text-[#f8f9fa] px-3 py-2 rounded-md shadow-lg text-[13px] border border-[#2a2a35]">
-                        <span className="font-medium text-white">{d.count} Pomodoros</span> – {d.longDayDate}
+                      <div className="bg-rich-black text-canvas-white px-3 py-2 rounded-md shadow-lg text-[13px] border border-outline-variant/20">
+                        <span className="font-medium text-canvas-white">{d.count} Pomodoros</span> – {d.longDayDate}
                       </div>
                     );
                   }
                   return null;
                 }}
-                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.06)' }}
               />
               <Bar dataKey="count" radius={[4, 4, 4, 4]} maxBarSize={40}>
                 {data.map((entry, index) => (

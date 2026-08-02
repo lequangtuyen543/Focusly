@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { AppLayout } from '@/components/layouts/AppLayout';
-import { CategoryManager } from '@/components/category/CategoryManager';
-import { Settings } from '@/components/settings/Settings';
+
+const AppLayout = ({ children }: { children: React.ReactNode }) => <div>{children}</div>;
+const CategoryManager = () => <div>Category Manager</div>;
+const Settings = () => <div>Settings</div>;
 
 // Placeholder components - will be implemented later
 const Home = () => <div>Home Page</div>;

@@ -29,14 +29,14 @@ const StreakDisplay: React.FC<StreakDisplayProps> = ({ currentStreak, bestStreak
         
         <div 
           className={cn(
-            'text-6xl font-bold text-dark-charcoal font-mono motion-reduce:animate-none',
+            'text-6xl font-bold text-canvas-white font-mono motion-reduce:animate-none',
             animate && 'animate-bounce-in'
           )}
         >
           {currentStreak}
         </div>
         
-        <div className="text-body text-medium-gray mt-2">
+        <div className="text-body text-light-gray mt-2">
           Kỷ lục: {bestStreak} ngày
         </div>
       </CardContent>

@@ -22,7 +22,7 @@ const DailyProgress: React.FC<{ size?: number; className?: string }> = ({
 
   // choose token classes (no hardcoded colors)
   const ringColor =
-    progress >= 100 ? 'stroke-green-600' : progress >= 50 ? 'stroke-cofounder-blue' : 'stroke-steel-gray';
+    progress >= 100 ? 'stroke-cofounder-blue' : progress >= 50 ? 'stroke-action-azure' : 'stroke-outline-variant/30';
 
   // single pulse when reaching 100% (non-looping)
   const [pulsing, setPulsing] = React.useState(false);
@@ -49,11 +49,11 @@ const DailyProgress: React.FC<{ size?: number; className?: string }> = ({
           }`}
         >
           {progress >= 100 ? (
-            <div className="font-semibold text-sm text-green-600">Hoàn thành!</div>
+            <div className="font-semibold text-sm text-cofounder-blue">Hoàn thành!</div>
           ) : (
             <div className="flex flex-col items-center">
-              <div className="text-lg font-semibold text-dark-charcoal">{`${completedPomodoros} / ${dailyGoal}`}</div>
-              <div className="text-xs text-medium-gray">Pomodoros</div>
+              <div className="text-lg font-semibold text-canvas-white">{`${completedPomodoros} / ${dailyGoal}`}</div>
+              <div className="text-xs text-light-gray">Pomodoros</div>
             </div>
           )}
         </div>

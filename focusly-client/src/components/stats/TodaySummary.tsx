@@ -32,8 +32,8 @@ const TodaySummary: React.FC<TodaySummaryProps> = ({
       
       <CardContent className="flex flex-col gap-8">
         <div>
-          <div className="text-body text-medium-gray mb-2">Thời gian tập trung</div>
-          <div className="text-5xl font-bold text-dark-charcoal font-mono">
+          <div className="text-body text-light-gray mb-2">Thời gian tập trung</div>
+          <div className="text-5xl font-bold text-canvas-white font-mono">
             {formatHHMM(totalFocusSeconds)}
           </div>
         </div>

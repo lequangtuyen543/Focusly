@@ -75,13 +75,13 @@
   }
 
   body {
-    @apply bg-canvas-white text-dark-charcoal font-body antialiased min-h-screen;
+    @apply bg-[#171717] text-canvas-white font-body antialiased min-h-screen;
     font-family: "Hanken Grotesk", system-ui, sans-serif;
     letter-spacing: -0.01em;
   }
 
   ::selection {
-    @apply bg-cofounder-blue/30 text-white;
+    @apply bg-cofounder-blue/30 text-canvas-white;
   }
 }
 
@@ -173,11 +173,11 @@
 
   /* Component patterns from design system */
   .nav-pill {
-    @apply rounded-nav-pill bg-ash-gray/80 backdrop-blur-xl border border-outline-variant/20 shadow-nav-item;
+    @apply rounded-nav-pill bg-rich-black/80 backdrop-blur-xl border border-outline-variant/20 shadow-nav-item;
   }
 
   .elevated-card {
-    @apply bg-off-white rounded-cards-sm shadow-card border border-outline-variant/10;
+    @apply bg-rich-black/70 rounded-cards-sm shadow-card border border-outline-variant/15;
   }
 
   .hero-overlay-card {
@@ -189,7 +189,7 @@
   }
 
   .ghost-input {
-    @apply bg-ash-gray border border-slate-gray text-dark-charcoal rounded-none focus:outline-none focus:border-primary-token focus:ring-1 focus:ring-primary-token transition-all;
+    @apply bg-rich-black/60 border border-outline-variant/20 text-canvas-white rounded-none focus:outline-none focus:border-cofounder-blue focus:ring-1 focus:ring-cofounder-blue transition-all;
   }
 
   .solid-dark-btn {
@@ -197,11 +197,11 @@
   }
 
   .outlined-action-btn {
-    @apply bg-transparent text-dark-charcoal border border-action-azure rounded-sm hover:bg-ash-gray/50 transition-colors;
+    @apply bg-transparent text-canvas-white border border-action-azure rounded-sm hover:bg-rich-black/40 transition-colors;
   }
 
   .subtle-nav-btn {
-    @apply bg-white/6 text-dark-charcoal rounded-nav-items py-[5px] px-3 hover:bg-surface-container-high/50 transition-colors;
+    @apply bg-rich-black/30 text-canvas-white rounded-nav-items py-[5px] px-3 hover:bg-rich-black/40 transition-colors;
   }
 
   /* Scale press interaction */

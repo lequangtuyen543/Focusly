@@ -1,8 +1,8 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'outline';
+type ButtonSize = 'sm' | 'md' | 'lg' | 'icon-sm';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -12,25 +12,29 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-cofounder-blue text-white hover:bg-cofounder-blue/90 active:bg-cofounder-blue/80 shadow-sm',
+    'bg-cofounder-blue text-canvas-white hover:bg-action-azure active:bg-cofounder-blue/80 shadow-sm',
   secondary:
     'bg-night-sky text-canvas-white border border-rich-black hover:bg-rich-black active:bg-night-sky shadow-sm',
   ghost:
-    'bg-transparent text-slate-gray hover:text-dark-charcoal hover:bg-ash-gray/50 active:bg-cool-gray/50',
+    'bg-transparent text-light-gray hover:text-canvas-white hover:bg-rich-black/30 active:bg-rich-black/40',
   danger:
-    'bg-transparent text-error hover:bg-error/5 active:bg-error/10 border border-error/20',
+    'bg-transparent text-error hover:bg-error/10 active:bg-error/15 border border-error/30',
+  outline:
+    'bg-transparent text-light-gray border border-outline-variant/40 hover:bg-rich-black/30 active:bg-rich-black/40',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
   sm: 'h-8 px-3 text-[13px] leading-none gap-1.5 font-semibold',
   md: 'h-10 px-4 text-button-label gap-2',
   lg: 'h-12 px-6 text-button-label gap-2.5',
+  'icon-sm': 'h-8 w-8 p-0 text-[13px] leading-none gap-0 font-semibold',
 };
 
 const spinnerSizes: Record<ButtonSize, string> = {
   sm: 'h-3.5 w-3.5',
   md: 'h-4 w-4',
   lg: 'h-5 w-5',
+  'icon-sm': 'h-4 w-4',
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -41,7 +45,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || loading}
         className={cn(
           'inline-flex items-center justify-center rounded transition-all duration-150 motion-reduce:transition-none',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cofounder-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas-white',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cofounder-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-rich-black/70',
           'disabled:pointer-events-none disabled:opacity-50',
           'hover:scale-[1.02] hover:shadow-md active:scale-[0.98]',
           variantStyles[variant],

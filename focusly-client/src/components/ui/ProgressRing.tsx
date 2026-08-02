@@ -51,7 +51,7 @@ const ProgressRing: React.FC<ProgressRingProps> = ({
           cy={size / 2}
           r={radius}
           fill="none"
-          className="stroke-steel-gray"
+          className="stroke-outline-variant/30"
           strokeWidth={strokeWidth}
         />
         <circle

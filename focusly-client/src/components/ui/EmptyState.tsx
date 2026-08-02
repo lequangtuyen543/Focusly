@@ -20,7 +20,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ message, icon, className, ...pr
           {icon}
         </div>
       )}
-      <p className="text-body text-medium-gray text-center max-w-sm">
+      <p className="text-body text-light-gray text-center max-w-sm">
         {message}
       </p>
     </div>

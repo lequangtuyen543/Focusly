@@ -65,7 +65,7 @@ function ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {
   return (
     <ProgressPrimitive.Value
       className={cn(
-        "ml-auto text-sm text-medium-gray tabular-nums",
+        "ml-auto text-sm text-light-gray tabular-nums",
         className
       )}
       data-slot="progress-value"

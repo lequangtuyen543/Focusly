@@ -27,28 +27,28 @@ function SettingsPage() {
     <div className="flex flex-col gap-section-gap">
       {/* Header */}
       <header className="mb-8">
-        <h1 className="font-display text-display text-dark-charcoal mb-2">Configuration</h1>
-        <p className="font-body text-body text-medium-gray max-w-2xl">
+        <h1 className="font-display text-display text-canvas-white mb-2">Configuration</h1>
+        <p className="font-body text-body text-light-gray max-w-2xl">
           Refine your environment for peak intellectual focus.
         </p>
       </header>
 
       {/* Settings Canvas */}
-      <div className="bg-off-white rounded-cards-lg p-8 md:p-12 shadow-[0_4px_24px_rgba(222,226,222,0.4),0_1px_2px_rgba(222,226,222,0.2)] border border-outline-variant/10 flex flex-col gap-12">
+      <div className="bg-rich-black/70 rounded-cards-lg p-8 md:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.35),0_1px_2px_rgba(0,0,0,0.2)] border border-outline-variant/15 flex flex-col gap-12">
         {/* Timer Durations */}
         <section className="flex flex-col gap-6" id="timers">
           <div>
-            <h2 className="font-heading text-heading-lg text-dark-charcoal mb-1">Timer Durations</h2>
-            <p className="font-body text-body text-medium-gray">Define the temporal blocks for your sessions.</p>
+            <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Timer Durations</h2>
+            <p className="font-body text-body text-light-gray">Define the temporal blocks for your sessions.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label className="font-button-label text-button-label text-slate-gray">Focus Block</label>
+              <label className="font-button-label text-button-label text-light-gray">Focus Block</label>
               <Select 
                 value={String(settings.focusDuration / 60)} 
                 onValueChange={(val) => updateSettings({ focusDuration: Number(val) * 60 })}
               >
-                <SelectTrigger className="w-full bg-ash-gray border border-slate-gray rounded-none py-3 px-4 h-auto font-subheading text-subheading focus-visible:border-dark-charcoal focus-visible:ring-1 focus-visible:ring-dark-charcoal">
+                <SelectTrigger className="w-full bg-rich-black/60 border border-outline-variant/20 rounded-none py-3 px-4 h-auto font-subheading text-subheading text-canvas-white focus-visible:border-cofounder-blue focus-visible:ring-1 focus-visible:ring-cofounder-blue">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -62,12 +62,12 @@ function SettingsPage() {
               </Select>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-button-label text-button-label text-slate-gray">Break</label>
+              <label className="font-button-label text-button-label text-light-gray">Break</label>
               <Select 
                 value={String(settings.breakDuration / 60)} 
                 onValueChange={(val) => updateSettings({ breakDuration: Number(val) * 60 })}
               >
-                <SelectTrigger className="w-full bg-ash-gray border border-slate-gray rounded-none py-3 px-4 h-auto font-subheading text-subheading focus-visible:border-dark-charcoal focus-visible:ring-1 focus-visible:ring-dark-charcoal">
+                <SelectTrigger className="w-full bg-rich-black/60 border border-outline-variant/20 rounded-none py-3 px-4 h-auto font-subheading text-subheading text-canvas-white focus-visible:border-cofounder-blue focus-visible:ring-1 focus-visible:ring-cofounder-blue">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -86,19 +86,19 @@ function SettingsPage() {
         {/* Daily Goal */}
         <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center" id="goals">
           <div className="flex-1">
-            <h2 className="font-heading text-heading-lg text-dark-charcoal mb-1">Daily Goal</h2>
-            <p className="font-body text-body text-medium-gray">Target number of focus blocks per day.</p>
+            <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Daily Goal</h2>
+            <p className="font-body text-body text-light-gray">Target number of focus blocks per day.</p>
           </div>
-          <div className="w-full md:w-48 relative flex items-center bg-ash-gray border border-slate-gray transition-all focus-within:border-dark-charcoal focus-within:ring-1 focus-within:ring-dark-charcoal">
+          <div className="w-full md:w-48 relative flex items-center bg-rich-black/60 border border-outline-variant/20 transition-all focus-within:border-cofounder-blue focus-within:ring-1 focus-within:ring-cofounder-blue">
             <button 
-               className="px-4 py-3 text-slate-gray hover:text-dark-charcoal focus:outline-none" 
+               className="px-4 py-3 text-light-gray hover:text-canvas-white focus:outline-none" 
                onClick={() => updateSettings({ dailyGoal: Math.max(1, settings.dailyGoal - 1) })}
                type="button"
             >
               −
             </button>
             <input
-              className="w-full bg-transparent text-dark-charcoal font-subheading text-subheading py-3 text-center focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className="w-full bg-transparent text-canvas-white font-subheading text-subheading py-3 text-center focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               type="number"
               min={1}
               max={20}
@@ -120,7 +120,7 @@ function SettingsPage() {
               }}
             />
             <button 
-               className="px-4 py-3 text-slate-gray hover:text-dark-charcoal focus:outline-none" 
+               className="px-4 py-3 text-light-gray hover:text-canvas-white focus:outline-none" 
                onClick={() => updateSettings({ dailyGoal: Math.min(20, (settings.dailyGoal || 0) + 1) })}
                type="button"
             >
@@ -134,14 +134,14 @@ function SettingsPage() {
         {/* Preferences */}
         <section className="flex flex-col gap-6" id="preferences">
           <div>
-            <h2 className="font-heading text-heading-lg text-dark-charcoal mb-1">Preferences</h2>
-            <p className="font-body text-body text-medium-gray">Manage your ambient notifications and audio cues.</p>
+            <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Preferences</h2>
+            <p className="font-body text-body text-light-gray">Manage your ambient notifications and audio cues.</p>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-surface-container-low transition-colors">
+            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
               <div>
-                <h3 className="font-subheading text-subheading text-dark-charcoal">Push Notifications</h3>
-                <p className="font-caption text-caption text-medium-gray">Alerts when a block completes.</p>
+                <h3 className="font-subheading text-subheading text-canvas-white">Push Notifications</h3>
+                <p className="font-caption text-caption text-light-gray">Alerts when a block completes.</p>
               </div>
               <button
                 aria-checked={settings.notificationEnabled}
@@ -153,16 +153,16 @@ function SettingsPage() {
                 onClick={() => updateSettings({ notificationEnabled: !settings.notificationEnabled })}
               >
                 <span
-                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-white shadow ring-0 transition duration-200 ease-in-out ${
+                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-rich-black shadow ring-0 transition duration-200 ease-in-out ${
                     settings.notificationEnabled ? 'translate-x-5' : 'translate-x-0'
                   }`}
                 />
               </button>
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-surface-container-low transition-colors">
+            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
               <div>
-                <h3 className="font-subheading text-subheading text-dark-charcoal">Audio Cues</h3>
-                <p className="font-caption text-caption text-medium-gray">Subtle chimes for state transitions.</p>
+                <h3 className="font-subheading text-subheading text-canvas-white">Audio Cues</h3>
+                <p className="font-caption text-caption text-light-gray">Subtle chimes for state transitions.</p>
               </div>
               <button
                 aria-checked={settings.soundEnabled}
@@ -174,16 +174,16 @@ function SettingsPage() {
                 onClick={() => updateSettings({ soundEnabled: !settings.soundEnabled })}
               >
                 <span
-                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-white shadow ring-0 transition duration-200 ease-in-out ${
+                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-rich-black shadow ring-0 transition duration-200 ease-in-out ${
                     settings.soundEnabled ? 'translate-x-5' : 'translate-x-0'
                   }`}
                 />
               </button>
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-surface-container-low transition-colors">
+            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
               <div>
-                <h3 className="font-subheading text-subheading text-dark-charcoal">Strict Mode</h3>
-                <p className="font-caption text-caption text-medium-gray">Prevent ending a focus block early.</p>
+                <h3 className="font-subheading text-subheading text-canvas-white">Strict Mode</h3>
+                <p className="font-caption text-caption text-light-gray">Prevent ending a focus block early.</p>
               </div>
               <button
                 aria-checked={strictMode}
@@ -195,7 +195,7 @@ function SettingsPage() {
                 onClick={() => setStrictMode(!strictMode)}
               >
                 <span
-                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-white shadow ring-0 transition duration-200 ease-in-out ${
+                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-rich-black shadow ring-0 transition duration-200 ease-in-out ${
                     strictMode ? 'translate-x-5' : 'translate-x-0'
                   }`}
                 />
@@ -207,10 +207,10 @@ function SettingsPage() {
         <hr className="border-t border-outline-variant/20" />
 
         {/* Data Management */}
-        <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center bg-surface-container/30 p-6 rounded-xl border border-outline-variant/10" id="data">
+        <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center bg-rich-black/40 p-6 rounded-xl border border-outline-variant/15" id="data">
           <div className="flex-1">
             <h2 className="font-subheading text-subheading text-error mb-1">Reset All Data</h2>
-            <p className="font-caption text-caption text-medium-gray">
+            <p className="font-caption text-caption text-light-gray">
               Permanently delete all session history and configuration. This action cannot be undone.
             </p>
           </div>
@@ -240,7 +240,7 @@ function SettingsPage() {
         </section>
 
         <div className="flex justify-center pt-4 pb-2">
-          <p className="font-caption text-caption text-medium-gray">
+          <p className="font-caption text-caption text-light-gray">
             Version 1.0.0
           </p>
         </div>

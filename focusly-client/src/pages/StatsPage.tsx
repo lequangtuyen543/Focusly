@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSessionStore } from '@/store/sessionStore';
 import { useStreakStore } from '@/store/streakStore';
 import { useSettingsStore } from '@/store/settingsStore';
@@ -72,10 +72,10 @@ function StatsPage() {
   return (
     <div className="flex flex-col gap-6 pb-20">
       <section className="mb-2">
-        <h1 className="font-heading-lg text-heading-lg text-dark-charcoal mb-4">
+        <h1 className="font-heading-lg text-heading-lg text-canvas-white mb-4">
           Your Progress
         </h1>
-        <p className="font-body text-body text-slate-gray max-w-2xl">
+        <p className="font-body text-body text-light-gray max-w-2xl">
           A high-level overview of your focus sessions and productivity trends. Consistent effort compounds over time.
         </p>
       </section>

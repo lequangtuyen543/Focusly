@@ -117,15 +117,16 @@ function TimerPage() {
     <div className="flex flex-col items-center gap-section-gap">
       {/* Greeting & Quote Header */}
       <header className="text-center w-full max-w-2xl mx-auto space-y-4">
-        <h1 className="font-heading text-heading text-dark-charcoal">Good morning.</h1>
-        <p className="font-body text-subheading text-medium-gray">
+        <h1 className="font-heading text-heading text-canvas-white">Good morning.</h1>
+        <p className="font-body text-subheading text-light-gray">
           “Architecture starts when you carefully put two bricks together.” — Mies van der Rohe
         </p>
       </header>
 
       {/* Timer Hero Section */}
       <section className="w-full max-w-md mx-auto relative flex flex-col items-center justify-center mt-8">
-        <div className={`relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center bg-off-white rounded-[40px] shadow-card border border-outline-variant/10 transition-transform duration-300 ease-out ${pulsing ? 'scale-105' : 'scale-100'}`}>
+        <div className={`relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center bg-rich-black/70 rounded-[40px] shadow-card border border-outline-variant/15 transition-transform duration-300 ease-out ${pulsing ? 'scale-105' : 'scale-100'}`}>
+
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
              {/* Mobile ring */}
              <ProgressRing value={progress} size={280} className="md:hidden" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
@@ -137,7 +138,7 @@ function TimerPage() {
           <div className="text-center z-10 flex flex-col items-center gap-4">
             <SessionStatus />
             <TimerDisplay />
-            <span className="font-body text-body text-slate-gray">Pomodoro</span>
+            <span className="font-body text-body text-light-gray">Pomodoro</span>
           </div>
         </div>
 

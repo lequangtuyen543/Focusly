@@ -10,7 +10,7 @@ interface SessionItemProps {
 
 const SessionItem: React.FC<SessionItemProps> = ({ session }) => {
   const icon = session.type === 'focus' ? '🍅' : '☕';
-  const bgColor = session.type === 'focus' ? 'bg-violet-500/15' : 'bg-cyan-500/15';
+  const bgColor = session.type === 'focus' ? 'bg-cofounder-blue/15' : 'bg-action-azure/15';
   const badgeVariant = session.completed ? 'success' : 'warning';
   const badgeText = session.completed ? 'Hoàn thành' : 'Huỷ';
 
@@ -32,7 +32,7 @@ const SessionItem: React.FC<SessionItemProps> = ({ session }) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-between gap-4 px-4 py-3 rounded-cards-sm',
+        'flex items-center justify-between gap-4 px-4 py-3 rounded-cards-sm border border-outline-variant/15',
         'transition-colors duration-200',
         bgColor,
       )}
@@ -40,7 +40,7 @@ const SessionItem: React.FC<SessionItemProps> = ({ session }) => {
       <div className="flex items-center gap-3 flex-1">
         <span className="text-xl">{icon}</span>
         <div className="flex-1 min-w-0">
-          <div className="text-caption text-medium-gray">
+          <div className="text-caption text-light-gray">
             {startTime} → {endTime}
           </div>
           <div className="text-button-label text-canvas-white">

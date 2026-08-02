@@ -27,10 +27,10 @@ function HistoryPage() {
     <div className="flex flex-col gap-8">
       {/* Header */}
       <header className="flex flex-col gap-3">
-        <h1 className="font-heading text-heading text-dark-charcoal">
+        <h1 className="font-heading text-heading text-canvas-white">
           Lịch sử phiên làm việc
         </h1>
-        <p className="font-body text-body text-medium-gray">
+        <p className="font-body text-body text-light-gray">
           Xem lại các phiên làm việc của bạn để tối ưu hóa hiệu suất công việc.
         </p>
       </header>
@@ -41,24 +41,24 @@ function HistoryPage() {
           <Card>
             <CardContent className="p-4">
               <div className="flex flex-col gap-2">
-                <p className="text-caption text-medium-gray">Tổng phiên</p>
-                <p className="text-heading text-dark-charcoal">{stats.totalSessions}</p>
+                <p className="text-caption text-light-gray">Tổng phiên</p>
+                <p className="text-heading text-canvas-white">{stats.totalSessions}</p>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4">
               <div className="flex flex-col gap-2">
-                <p className="text-caption text-medium-gray">Focus 🍅</p>
-                <p className="text-heading text-dark-charcoal">{stats.focusSessions}</p>
+                <p className="text-caption text-light-gray">Focus 🍅</p>
+                <p className="text-heading text-canvas-white">{stats.focusSessions}</p>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4">
               <div className="flex flex-col gap-2">
-                <p className="text-caption text-medium-gray">Break ☕</p>
-                <p className="text-heading text-dark-charcoal">{stats.breakSessions}</p>
+                <p className="text-caption text-light-gray">Break ☕</p>
+                <p className="text-heading text-canvas-white">{stats.breakSessions}</p>
               </div>
             </CardContent>
           </Card>

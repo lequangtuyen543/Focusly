@@ -4,7 +4,7 @@ export const OnboardingFlow = () => {
   const [step, setStep] = useState(1)
 
   return (
-    <div className="fixed inset-0 z-[100] bg-canvas-white flex flex-col items-center justify-center p-6">
+    <div className="fixed inset-0 z-[100] bg-[#171717] flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-md space-y-8 text-center">
         <div className="flex justify-center gap-2 mb-8">
           {[1, 2, 3].map((s) => (
@@ -20,8 +20,8 @@ export const OnboardingFlow = () => {
         {step === 1 && (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="space-y-4">
-              <h1 className="font-heading text-heading text-dark-charcoal">Welcome to Focusly</h1>
-              <p className="font-body text-body text-medium-gray">
+              <h1 className="font-heading text-heading text-canvas-white">Welcome to Focusly</h1>
+              <p className="font-body text-body text-light-gray">
                 Your personal focus companion. Track deep work sessions, build productive habits, and architect your best work.
               </p>
             </div>
@@ -37,8 +37,8 @@ export const OnboardingFlow = () => {
         {step === 2 && (
           <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
             <div className="space-y-4 text-left">
-              <h2 className="font-heading text-heading-lg text-dark-charcoal">Set Your Daily Goal</h2>
-              <p className="font-body text-body text-medium-gray">
+              <h2 className="font-heading text-heading-lg text-canvas-white">Set Your Daily Goal</h2>
+              <p className="font-body text-body text-light-gray">
                 How many focus blocks do you want to complete each day?
               </p>
             </div>
@@ -54,8 +54,8 @@ export const OnboardingFlow = () => {
         {step === 3 && (
           <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
             <div className="space-y-4 text-left">
-              <h2 className="font-heading text-heading-lg text-dark-charcoal">Ready to Focus</h2>
-              <p className="font-body text-body text-medium-gray">
+              <h2 className="font-heading text-heading-lg text-canvas-white">Ready to Focus</h2>
+              <p className="font-body text-body text-light-gray">
                 You're all set. Start your first focus session and build your deep work habit.
               </p>
             </div>

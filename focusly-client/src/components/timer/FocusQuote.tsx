@@ -40,11 +40,11 @@ const FocusQuote: React.FC = () => {
 
   return (
     <section className="w-full max-w-md mx-auto mt-8">
-      <div className="bg-off-white rounded-xl p-6 border border-outline-variant/10 shadow-card">
-        <div className="font-caption text-caption text-medium-gray mb-2">Focus Quote</div>
+      <div className="bg-rich-black/70 rounded-xl p-6 border border-outline-variant/15 shadow-card">
+        <div className="font-caption text-caption text-light-gray mb-2">Focus Quote</div>
 
         <div
-          className={`font-caption text-caption text-medium-gray italic text-center transition-opacity duration-300 motion-reduce:transition-none min-h-[3rem] flex items-center justify-center ${
+          className={`font-caption text-caption text-light-gray italic text-center transition-opacity duration-300 motion-reduce:transition-none min-h-[3rem] flex items-center justify-center ${
             visible ? 'opacity-100' : 'opacity-0'
           }`}
           aria-live="polite"
@@ -56,7 +56,7 @@ const FocusQuote: React.FC = () => {
           <button
             type="button"
             aria-label="Refresh quote"
-            className="text-caption text-medium-gray hover:text-cofounder-blue focus:outline-none focus:ring-2 focus:ring-cofounder-blue/30 rounded"
+            className="text-caption text-light-gray hover:text-cofounder-blue focus:outline-none focus:ring-2 focus:ring-cofounder-blue/30 rounded"
             onClick={handleRefresh}
           >
             ↻

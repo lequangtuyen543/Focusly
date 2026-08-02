@@ -19,7 +19,7 @@ export function Navigation() {
             `font-body text-button-label px-4 py-2 rounded-nav-pill transition-all duration-200 ease-out scale-98 ${
               isActive
                 ? 'text-cofounder-blue font-semibold border-b-2 border-cofounder-blue pb-1'
-                : 'text-slate-gray font-medium hover:text-dark-charcoal hover:bg-surface-container-high/50'
+                : 'text-light-gray font-medium hover:text-canvas-white hover:bg-rich-black/30'
             }`
           }
         >
