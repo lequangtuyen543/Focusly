@@ -16,11 +16,11 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     'bg-night-sky text-canvas-white border border-rich-black hover:bg-rich-black active:bg-night-sky shadow-sm',
   ghost:
-    'bg-transparent text-light-gray hover:text-canvas-white hover:bg-rich-black/30 active:bg-rich-black/40',
+    'bg-transparent text-cool-gray hover:text-canvas-white hover:bg-rich-black/30 active:bg-rich-black/40',
   danger:
     'bg-transparent text-error hover:bg-error/10 active:bg-error/15 border border-error/30',
   outline:
-    'bg-transparent text-light-gray border border-outline-variant/40 hover:bg-rich-black/30 active:bg-rich-black/40',
+    'bg-transparent text-cool-gray border border-outline-variant/40 hover:bg-rich-black/30 active:bg-rich-black/40',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

@@ -28,7 +28,7 @@ function SettingsPage() {
       {/* Header */}
       <header className="mb-8">
         <h1 className="font-display text-display text-canvas-white mb-2">Configuration</h1>
-        <p className="font-body text-body text-light-gray max-w-2xl">
+        <p className="font-body text-body text-cool-gray max-w-2xl">
           Refine your environment for peak intellectual focus.
         </p>
       </header>
@@ -39,11 +39,11 @@ function SettingsPage() {
         <section className="flex flex-col gap-6" id="timers">
           <div>
             <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Timer Durations</h2>
-            <p className="font-body text-body text-light-gray">Define the temporal blocks for your sessions.</p>
+            <p className="font-body text-body text-cool-gray">Define the temporal blocks for your sessions.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label className="font-button-label text-button-label text-light-gray">Focus Block</label>
+              <label className="font-button-label text-button-label text-cool-gray">Focus Block</label>
               <Select 
                 value={String(settings.focusDuration / 60)} 
                 onValueChange={(val) => updateSettings({ focusDuration: Number(val) * 60 })}
@@ -62,7 +62,7 @@ function SettingsPage() {
               </Select>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-button-label text-button-label text-light-gray">Break</label>
+              <label className="font-button-label text-button-label text-cool-gray">Break</label>
               <Select 
                 value={String(settings.breakDuration / 60)} 
                 onValueChange={(val) => updateSettings({ breakDuration: Number(val) * 60 })}
@@ -87,11 +87,11 @@ function SettingsPage() {
         <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center" id="goals">
           <div className="flex-1">
             <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Daily Goal</h2>
-            <p className="font-body text-body text-light-gray">Target number of focus blocks per day.</p>
+            <p className="font-body text-body text-cool-gray">Target number of focus blocks per day.</p>
           </div>
           <div className="w-full md:w-48 relative flex items-center bg-rich-black/60 border border-outline-variant/20 transition-all focus-within:border-cofounder-blue focus-within:ring-1 focus-within:ring-cofounder-blue">
             <button 
-               className="px-4 py-3 text-light-gray hover:text-canvas-white focus:outline-none" 
+               className="px-4 py-3 text-cool-gray hover:text-canvas-white focus:outline-none" 
                onClick={() => updateSettings({ dailyGoal: Math.max(1, settings.dailyGoal - 1) })}
                type="button"
             >
@@ -120,7 +120,7 @@ function SettingsPage() {
               }}
             />
             <button 
-               className="px-4 py-3 text-light-gray hover:text-canvas-white focus:outline-none" 
+               className="px-4 py-3 text-cool-gray hover:text-canvas-white focus:outline-none" 
                onClick={() => updateSettings({ dailyGoal: Math.min(20, (settings.dailyGoal || 0) + 1) })}
                type="button"
             >
@@ -135,13 +135,13 @@ function SettingsPage() {
         <section className="flex flex-col gap-6" id="preferences">
           <div>
             <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Preferences</h2>
-            <p className="font-body text-body text-light-gray">Manage your ambient notifications and audio cues.</p>
+            <p className="font-body text-body text-cool-gray">Manage your ambient notifications and audio cues.</p>
           </div>
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
               <div>
                 <h3 className="font-subheading text-subheading text-canvas-white">Push Notifications</h3>
-                <p className="font-caption text-caption text-light-gray">Alerts when a block completes.</p>
+                <p className="font-caption text-caption text-cool-gray">Alerts when a block completes.</p>
               </div>
               <button
                 aria-checked={settings.notificationEnabled}
@@ -162,7 +162,7 @@ function SettingsPage() {
             <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
               <div>
                 <h3 className="font-subheading text-subheading text-canvas-white">Audio Cues</h3>
-                <p className="font-caption text-caption text-light-gray">Subtle chimes for state transitions.</p>
+                <p className="font-caption text-caption text-cool-gray">Subtle chimes for state transitions.</p>
               </div>
               <button
                 aria-checked={settings.soundEnabled}
@@ -183,7 +183,7 @@ function SettingsPage() {
             <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
               <div>
                 <h3 className="font-subheading text-subheading text-canvas-white">Strict Mode</h3>
-                <p className="font-caption text-caption text-light-gray">Prevent ending a focus block early.</p>
+                <p className="font-caption text-caption text-cool-gray">Prevent ending a focus block early.</p>
               </div>
               <button
                 aria-checked={strictMode}
@@ -210,7 +210,7 @@ function SettingsPage() {
         <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center bg-rich-black/40 p-6 rounded-xl border border-outline-variant/15" id="data">
           <div className="flex-1">
             <h2 className="font-subheading text-subheading text-error mb-1">Reset All Data</h2>
-            <p className="font-caption text-caption text-light-gray">
+            <p className="font-caption text-caption text-cool-gray">
               Permanently delete all session history and configuration. This action cannot be undone.
             </p>
           </div>
@@ -240,7 +240,7 @@ function SettingsPage() {
         </section>
 
         <div className="flex justify-center pt-4 pb-2">
-          <p className="font-caption text-caption text-light-gray">
+          <p className="font-caption text-caption text-cool-gray">
             Version 1.0.0
           </p>
         </div>

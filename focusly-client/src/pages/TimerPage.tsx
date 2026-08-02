@@ -118,7 +118,7 @@ function TimerPage() {
       {/* Greeting & Quote Header */}
       <header className="text-center w-full max-w-2xl mx-auto space-y-4">
         <h1 className="font-heading text-heading text-canvas-white">Good morning.</h1>
-        <p className="font-body text-subheading text-light-gray">
+        <p className="font-body text-subheading text-cool-gray">
           “Architecture starts when you carefully put two bricks together.” — Mies van der Rohe
         </p>
       </header>
@@ -138,7 +138,7 @@ function TimerPage() {
           <div className="text-center z-10 flex flex-col items-center gap-4">
             <SessionStatus />
             <TimerDisplay />
-            <span className="font-body text-body text-light-gray">Pomodoro</span>
+            <span className="font-body text-body text-cool-gray">Pomodoro</span>
           </div>
         </div>
 

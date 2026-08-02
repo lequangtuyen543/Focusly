@@ -30,7 +30,7 @@ function HistoryPage() {
         <h1 className="font-heading text-heading text-canvas-white">
           Lịch sử phiên làm việc
         </h1>
-        <p className="font-body text-body text-light-gray">
+        <p className="font-body text-body text-cool-gray">
           Xem lại các phiên làm việc của bạn để tối ưu hóa hiệu suất công việc.
         </p>
       </header>
@@ -41,7 +41,7 @@ function HistoryPage() {
           <Card>
             <CardContent className="p-4">
               <div className="flex flex-col gap-2">
-                <p className="text-caption text-light-gray">Tổng phiên</p>
+                <p className="text-caption text-cool-gray">Tổng phiên</p>
                 <p className="text-heading text-canvas-white">{stats.totalSessions}</p>
               </div>
             </CardContent>
@@ -49,7 +49,7 @@ function HistoryPage() {
           <Card>
             <CardContent className="p-4">
               <div className="flex flex-col gap-2">
-                <p className="text-caption text-light-gray">Focus 🍅</p>
+                <p className="text-caption text-cool-gray">Focus 🍅</p>
                 <p className="text-heading text-canvas-white">{stats.focusSessions}</p>
               </div>
             </CardContent>
@@ -57,7 +57,7 @@ function HistoryPage() {
           <Card>
             <CardContent className="p-4">
               <div className="flex flex-col gap-2">
-                <p className="text-caption text-light-gray">Break ☕</p>
+                <p className="text-caption text-cool-gray">Break ☕</p>
                 <p className="text-heading text-canvas-white">{stats.breakSessions}</p>
               </div>
             </CardContent>

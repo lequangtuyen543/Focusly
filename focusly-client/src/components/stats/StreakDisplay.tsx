@@ -36,7 +36,7 @@ const StreakDisplay: React.FC<StreakDisplayProps> = ({ currentStreak, bestStreak
           {currentStreak}
         </div>
         
-        <div className="text-body text-light-gray mt-2">
+        <div className="text-body text-cool-gray mt-2">
           Kỷ lục: {bestStreak} ngày
         </div>
       </CardContent>

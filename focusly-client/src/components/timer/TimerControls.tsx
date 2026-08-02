@@ -86,10 +86,10 @@ const TimerControls: React.FC = () => {
         disabled={status === 'idle'}
         className={`w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 transition-colors ${
           status === 'idle'
-            ? 'text-light-gray opacity-50 cursor-not-allowed'
+            ? 'text-cool-gray opacity-50 cursor-not-allowed'
             : confirmingReset
             ? 'text-error border-error/50 hover:bg-error/10'
-            : 'text-light-gray hover:bg-rich-black/30 hover:text-canvas-white'
+            : 'text-cool-gray hover:bg-rich-black/30 hover:text-canvas-white'
         }`}
         title={confirmingReset ? 'Confirm Reset' : 'Reset'}
       >
@@ -122,7 +122,7 @@ const TimerControls: React.FC = () => {
 
       <button
         disabled
-        className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 text-light-gray opacity-50 cursor-not-allowed transition-colors"
+        className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 text-cool-gray opacity-50 cursor-not-allowed transition-colors"
         title="Skip Next"
       >
         <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>

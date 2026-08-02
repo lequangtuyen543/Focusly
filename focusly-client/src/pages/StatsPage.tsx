@@ -75,7 +75,7 @@ function StatsPage() {
         <h1 className="font-heading-lg text-heading-lg text-canvas-white mb-4">
           Your Progress
         </h1>
-        <p className="font-body text-body text-light-gray max-w-2xl">
+        <p className="font-body text-body text-cool-gray max-w-2xl">
           A high-level overview of your focus sessions and productivity trends. Consistent effort compounds over time.
         </p>
       </section>

@@ -80,6 +80,36 @@
     letter-spacing: -0.01em;
   }
 
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 140, 166, 0.75) rgba(24, 24, 29, 0.55);
+  }
+
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 140, 166, 0.75) rgba(24, 24, 29, 0.55);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(24, 24, 29, 0.55);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(129, 140, 166, 0.85), rgba(90, 103, 126, 0.95));
+    border: 2px solid rgba(24, 24, 29, 0.55);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(156, 163, 175, 0.95), rgba(110, 121, 140, 1));
+  }
+
   ::selection {
     @apply bg-cofounder-blue/30 text-canvas-white;
   }

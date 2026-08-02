@@ -304,8 +304,8 @@ Phase 10 → Deploy & Tài liệu hóa
 
 - [x] Đảm bảo toàn bộ UI consistent trên dark mode (là default)
 - [x] Không có element nào có background trắng cứng
-- [ ] Text contrast đạt AA accessibility (kiểm tra bằng Lighthouse)
-- [ ] Scrollbar styling trên dark background
+- [x] Text contrast đạt AA accessibility (kiểm tra bằng Lighthouse)
+- [x] Scrollbar styling trên dark background
 
 ### 5.3 Responsive Testing
 

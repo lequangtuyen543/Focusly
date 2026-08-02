@@ -16,11 +16,11 @@ const EmptyState: React.FC<EmptyStateProps> = ({ message, icon, className, ...pr
       {...props}
     >
       {icon && (
-        <div className="mb-4 text-light-gray [&>svg]:size-10">
+        <div className="mb-4 text-cool-gray [&>svg]:size-10">
           {icon}
         </div>
       )}
-      <p className="text-body text-light-gray text-center max-w-sm">
+      <p className="text-body text-cool-gray text-center max-w-sm">
         {message}
       </p>
     </div>

@@ -49,7 +49,7 @@ CardTitle.displayName = 'CardTitle';
 interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 const CardDescription: React.FC<CardDescriptionProps> = ({ className, children, ...props }) => (
-  <p className={cn('text-body text-light-gray', className)} {...props}>
+  <p className={cn('text-body text-cool-gray', className)} {...props}>
     {children}
   </p>
 );

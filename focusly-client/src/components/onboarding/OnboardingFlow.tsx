@@ -21,7 +21,7 @@ export const OnboardingFlow = () => {
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="space-y-4">
               <h1 className="font-heading text-heading text-canvas-white">Welcome to Focusly</h1>
-              <p className="font-body text-body text-light-gray">
+              <p className="font-body text-body text-cool-gray">
                 Your personal focus companion. Track deep work sessions, build productive habits, and architect your best work.
               </p>
             </div>
@@ -38,7 +38,7 @@ export const OnboardingFlow = () => {
           <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
             <div className="space-y-4 text-left">
               <h2 className="font-heading text-heading-lg text-canvas-white">Set Your Daily Goal</h2>
-              <p className="font-body text-body text-light-gray">
+              <p className="font-body text-body text-cool-gray">
                 How many focus blocks do you want to complete each day?
               </p>
             </div>
@@ -55,7 +55,7 @@ export const OnboardingFlow = () => {
           <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
             <div className="space-y-4 text-left">
               <h2 className="font-heading text-heading-lg text-canvas-white">Ready to Focus</h2>
-              <p className="font-body text-body text-light-gray">
+              <p className="font-body text-body text-cool-gray">
                 You're all set. Start your first focus session and build your deep work habit.
               </p>
             </div>

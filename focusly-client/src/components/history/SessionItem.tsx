@@ -40,7 +40,7 @@ const SessionItem: React.FC<SessionItemProps> = ({ session }) => {
       <div className="flex items-center gap-3 flex-1">
         <span className="text-xl">{icon}</span>
         <div className="flex-1 min-w-0">
-          <div className="text-caption text-light-gray">
+          <div className="text-caption text-cool-gray">
             {startTime} → {endTime}
           </div>
           <div className="text-button-label text-canvas-white">

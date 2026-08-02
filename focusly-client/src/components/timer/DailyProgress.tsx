@@ -53,7 +53,7 @@ const DailyProgress: React.FC<{ size?: number; className?: string }> = ({
           ) : (
             <div className="flex flex-col items-center">
               <div className="text-lg font-semibold text-canvas-white">{`${completedPomodoros} / ${dailyGoal}`}</div>
-              <div className="text-xs text-light-gray">Pomodoros</div>
+              <div className="text-xs text-cool-gray">Pomodoros</div>
             </div>
           )}
         </div>

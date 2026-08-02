@@ -14,7 +14,7 @@ const StatCard: React.FC<StatCardProps> = ({ label, value, subText, icon, classN
   return (
     <Card className={cn('p-6', className)}>
       <CardContent className="flex flex-col gap-2">
-        <div className="flex items-center justify-between text-light-gray">
+        <div className="flex items-center justify-between text-cool-gray">
           <span className="text-body font-medium">{label}</span>
           {icon && <span className="text-xl">{icon}</span>}
         </div>
@@ -22,7 +22,7 @@ const StatCard: React.FC<StatCardProps> = ({ label, value, subText, icon, classN
           {value}
         </div>
         {subText && (
-          <div className="text-caption text-light-gray mt-1">
+          <div className="text-caption text-cool-gray mt-1">
             {subText}
           </div>
         )}
