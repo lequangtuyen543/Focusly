@@ -17,7 +17,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className={`min-h-screen text-canvas-white font-body flex min-w-0 flex-col transition-colors duration-500 ease-in-out ${bgClass}`}>
       <Header />
-      <main className="mx-auto flex-1 w-full max-w-6xl overflow-x-hidden px-3 pt-24 pb-24 sm:px-6 sm:pt-28 md:px-8 md:pt-32 lg:px-10 xl:px-12">
+      <main className="mx-auto flex-1 w-full max-w-6xl overflow-x-hidden px-3 pt-24 pb-32 sm:px-6 sm:pt-28 sm:pb-36 md:px-8 md:pt-32 md:pb-40 lg:px-10 lg:pb-24 xl:px-12">
         {children}
       </main>
       <footer className="mt-auto w-full border-t border-outline-variant/10 py-8 sm:py-10 lg:py-12">

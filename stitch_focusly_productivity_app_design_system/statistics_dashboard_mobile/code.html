@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Focusly - Statistics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Noto+Serif:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blur-pill {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            background-color: #fcf8f9;
+        }
+        /* Custom scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#ffffff",
+                      "charcoal": "#2c2c2c",
+                      "ash-gray": "#f9faf7",
+                      "primary-container": "#1f1f29",
+                      "on-secondary-fixed": "#001e31",
+                      "tertiary": "#0c0801",
+                      "surface": "#fcf8f9",
+                      "on-secondary-container": "#004970",
+                      "inverse-on-surface": "#f4f0f0",
+                      "surface-bright": "#fcf8f9",
+                      "steel-gray": "#dee2de",
+                      "tertiary-container": "#252011",
+                      "primary-fixed-dim": "#c7c5d3",
+                      "surface-dim": "#ddd9da",
+                      "surface-tint": "#5e5d69",
+                      "medium-gray": "#646464",
+                      "on-tertiary-fixed": "#201b0d",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#004b72",
+                      "surface-variant": "#e5e1e2",
+                      "secondary-fixed": "#cce5ff",
+                      "background": "#fcf8f9",
+                      "pitch-black": "#000000",
+                      "primary-fixed": "#e3e1ef",
+                      "surface-container-low": "#f7f3f3",
+                      "cool-gray": "#eef1ed",
+                      "outline": "#78767c",
+                      "on-tertiary-fixed-variant": "#4d4635",
+                      "on-surface": "#1c1b1c",
+                      "on-tertiary-container": "#908773",
+                      "action-azure": "#41a1cf",
+                      "on-primary-fixed-variant": "#464651",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#1b1b25",
+                      "slate-gray": "#444141",
+                      "outline-variant": "#c8c5cc",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#90cdff",
+                      "canvas-white": "#ffffff",
+                      "secondary": "#006496",
+                      "rich-black": "#282834",
+                      "surface-container-highest": "#e5e1e2",
+                      "surface-container-high": "#ebe7e8",
+                      "surface-container": "#f1edee",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#60bbfe",
+                      "inverse-primary": "#c7c5d3",
+                      "dark-charcoal": "#171717",
+                      "tertiary-fixed-dim": "#d0c6af",
+                      "on-surface-variant": "#47464b",
+                      "on-primary-container": "#878693",
+                      "error-container": "#ffdad6",
+                      "off-white": "#fefffc",
+                      "inverse-surface": "#313031",
+                      "light-gray": "#b4b8b4",
+                      "tertiary-fixed": "#ece2ca",
+                      "primary": "#070710",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1c1b1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "section-gap": "32px",
+                      "card-padding": "16px",
+                      "max-width": "1200px",
+                      "element-gap": "8px"
+              },
+              "fontFamily": {
+                      "body": ["hankenGrotesk"],
+                      "heading-lg": ["notoSerif"],
+                      "subheading": ["hankenGrotesk"],
+                      "heading": ["notoSerif"],
+                      "caption": ["hankenGrotesk"],
+                      "button-label": ["hankenGrotesk"],
+                      "display": ["notoSerif"]
+              },
+              "fontSize": {
+                      "body": ["15px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "heading-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                      "subheading": ["18px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "heading": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "caption": ["13px", {"lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "button-label": ["16px", {"lineHeight": "1", "letterSpacing": "-0.012em", "fontWeight": "600"}],
+                      "display": ["54px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="font-body text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="api">api</span>
+<span class="font-heading text-subheading tracking-tight text-primary">Focusly</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-gray active:scale-95 transition-transform" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full bg-steel-gray flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-6 max-w-[1200px] mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-8">
+<h1 class="font-heading-lg text-heading-lg text-primary mb-2">Your Progress</h1>
+<p class="text-slate-gray font-body text-body">Consistency is the key to mastery.</p>
+</header>
+<!-- High-Level Metric Grid (2 Column) -->
+<section class="grid grid-cols-2 gap-4 mb-8">
+<!-- Total Focus Time -->
+<div class="bg-off-white p-5 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.03)] border border-steel-gray/30 col-span-2">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-action-azure bg-action-azure/10 p-2 rounded-lg" data-icon="schedule">schedule</span>
+<span class="text-caption font-caption text-secondary font-medium">+12% vs last week</span>
+</div>
+<h3 class="text-slate-gray text-caption font-caption mb-1">Total Focus Time</h3>
+<p class="font-heading text-subheading text-primary">42h 15m</p>
+</div>
+<!-- Pomodoros -->
+<div class="bg-off-white p-5 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.03)] border border-steel-gray/30">
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary bg-ash-gray p-2 rounded-lg" data-icon="timer">timer</span>
+</div>
+<h3 class="text-slate-gray text-caption font-caption mb-1">Pomodoros</h3>
+<p class="font-heading text-subheading text-primary">84</p>
+</div>
+<!-- Current Streak -->
+<div class="bg-off-white p-5 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.03)] border border-steel-gray/30">
+<div class="mb-4">
+<span class="material-symbols-outlined text-on-error-container bg-error-container/40 p-2 rounded-lg" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<h3 class="text-slate-gray text-caption font-caption mb-1">Current Streak</h3>
+<p class="font-heading text-subheading text-primary">12 Days</p>
+</div>
+</section>
+<!-- Weekly Focus Trend Chart -->
+<section class="mb-8">
+<div class="bg-off-white p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-steel-gray/20">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-subheading text-subheading text-primary">Weekly Focus Trend</h2>
+<span class="material-symbols-outlined text-slate-gray" data-icon="more_horiz">more_horiz</span>
+</div>
+<!-- Simple Bar Chart Visualization -->
+<div class="flex items-end justify-between h-48 gap-2 px-1">
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-cool-gray rounded-t-lg transition-all duration-700 h-[60%]"></div>
+<span class="text-[10px] font-caption text-slate-gray mt-2">Mon</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-cool-gray rounded-t-lg transition-all duration-700 h-[45%]"></div>
+<span class="text-[10px] font-caption text-slate-gray mt-2">Tue</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-cool-gray rounded-t-lg transition-all duration-700 h-[85%]"></div>
+<span class="text-[10px] font-caption text-slate-gray mt-2">Wed</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-action-azure rounded-t-lg transition-all duration-700 h-[95%]"></div>
+<span class="text-[10px] font-caption text-primary font-bold mt-2">Thu</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-cool-gray rounded-t-lg transition-all duration-700 h-[40%]"></div>
+<span class="text-[10px] font-caption text-slate-gray mt-2">Fri</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-cool-gray rounded-t-lg transition-all duration-700 h-[20%]"></div>
+<span class="text-[10px] font-caption text-slate-gray mt-2">Sat</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-cool-gray rounded-t-lg transition-all duration-700 h-[30%]"></div>
+<span class="text-[10px] font-caption text-slate-gray mt-2">Sun</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Breakdown (Asymmetric Card Layout) -->
+<section class="mb-8">
+<h2 class="font-subheading text-subheading text-primary mb-4">Activity Breakdown</h2>
+<div class="flex flex-col gap-4">
+<div class="bg-primary p-6 rounded-2xl text-on-primary flex items-center justify-between">
+<div>
+<p class="text-on-primary-container font-caption text-caption uppercase tracking-wider mb-1">Deep Work</p>
+<h4 class="font-heading text-subheading">28.5 Hours</h4>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-action-azure/30 flex items-center justify-center relative">
+<span class="text-caption font-caption">68%</span>
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle cx="32" cy="32" fill="none" r="28" stroke="#41a1cf" stroke-dasharray="176" stroke-dashoffset="56" stroke-width="4"></circle>
+</svg>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-4 rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="mail">mail</span>
+<p class="text-slate-gray font-caption text-caption mb-1">Emails</p>
+<p class="font-bold text-primary">4.2h</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl">
+<span class="material-symbols-outlined text-action-azure mb-2" data-icon="groups">groups</span>
+<p class="text-slate-gray font-caption text-caption mb-1">Meetings</p>
+<p class="font-bold text-primary">9.5h</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Insight Card -->
+<section class="mb-4">
+<div class="bg-secondary-container p-6 rounded-[24px] relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-subheading text-on-secondary-container mb-2">Weekly Insight</h3>
+<p class="font-body text-body text-on-secondary-container opacity-90 leading-relaxed">
+                        Your focus is highest between <span class="font-bold">9:00 AM and 11:30 AM</span>. Planning your most difficult tasks during this window could increase productivity by up to 25%.
+                    </p>
+<button class="mt-4 px-6 py-2 bg-primary text-on-primary rounded-full font-button-label text-button-label active:scale-95 transition-transform">
+                        Explore Habits
+                    </button>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-action-azure/20 rounded-full blur-2xl"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-ash-gray/90 backdrop-blur-xl rounded-t-xl shadow-lg flex justify-around items-center px-4 py-3 pb-safe">
+<!-- Timer -->
+<a class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span class="font-caption text-caption mt-1">Timer</span>
+</a>
+<!-- Stats (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-fixed text-on-secondary-fixed rounded-full px-5 py-1.5 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
+<span class="font-caption text-caption mt-0.5 font-bold">Stats</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-caption text-caption mt-1">History</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-caption text-caption mt-1">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Chart hover animation simulation
+        document.querySelectorAll('.bg-cool-gray, .bg-action-azure').forEach(bar => {
+            bar.addEventListener('click', function() {
+                this.classList.add('scale-105');
+                setTimeout(() => this.classList.remove('scale-105'), 300);
+            });
+        });
+
+        // Simple light/dark mode persistence check (placeholder for future functionality)
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Logic for dark mode could be added here
+        }
+    </script>
+</body></html>

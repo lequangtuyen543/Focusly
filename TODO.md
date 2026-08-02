@@ -314,7 +314,7 @@ Phase 10 → Deploy & Tài liệu hóa
 - [x] Test trên 768px (iPad): layout điều chỉnh hợp lý
 - [x] Test trên 1280px (Laptop): full layout đẹp
 - [x] Test trên 1440px (Desktop lớn): không quá rộng (max-width container)
-- [ ] Navigation: desktop → top nav; mobile → bottom tab bar hoặc hamburger
+- [x] Navigation: desktop → top nav; mobile → bottom tab bar hoặc hamburger
 
 ### 5.4 Tab Title & Favicon
 

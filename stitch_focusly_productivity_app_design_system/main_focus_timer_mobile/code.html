@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Focusly - Mindful Productivity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "charcoal": "#2c2c2c",
+                    "ash-gray": "#f9faf7",
+                    "primary-container": "#1f1f29",
+                    "on-secondary-fixed": "#001e31",
+                    "tertiary": "#0c0801",
+                    "surface": "#fcf8f9",
+                    "on-secondary-container": "#004970",
+                    "inverse-on-surface": "#f4f0f0",
+                    "surface-bright": "#fcf8f9",
+                    "steel-gray": "#dee2de",
+                    "tertiary-container": "#252011",
+                    "primary-fixed-dim": "#c7c5d3",
+                    "surface-dim": "#ddd9da",
+                    "surface-tint": "#5e5d69",
+                    "medium-gray": "#646464",
+                    "on-tertiary-fixed": "#201b0d",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#004b72",
+                    "surface-variant": "#e5e1e2",
+                    "secondary-fixed": "#cce5ff",
+                    "background": "#fcf8f9",
+                    "pitch-black": "#000000",
+                    "primary-fixed": "#e3e1ef",
+                    "surface-container-low": "#f7f3f3",
+                    "cool-gray": "#eef1ed",
+                    "outline": "#78767c",
+                    "on-tertiary-fixed-variant": "#4d4635",
+                    "on-surface": "#1c1b1c",
+                    "on-tertiary-container": "#908773",
+                    "action-azure": "#41a1cf",
+                    "on-primary-fixed-variant": "#464651",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#1b1b25",
+                    "slate-gray": "#444141",
+                    "outline-variant": "#c8c5cc",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#90cdff",
+                    "canvas-white": "#ffffff",
+                    "secondary": "#006496",
+                    "rich-black": "#282834",
+                    "surface-container-highest": "#e5e1e2",
+                    "surface-container-high": "#ebe7e8",
+                    "surface-container": "#f1edee",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#60bbfe",
+                    "inverse-primary": "#c7c5d3",
+                    "dark-charcoal": "#171717",
+                    "tertiary-fixed-dim": "#d0c6af",
+                    "on-surface-variant": "#47464b",
+                    "on-primary-container": "#878693",
+                    "error-container": "#ffdad6",
+                    "off-white": "#fefffc",
+                    "inverse-surface": "#313031",
+                    "light-gray": "#b4b8b4",
+                    "tertiary-fixed": "#ece2ca",
+                    "primary": "#070710",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1c1b1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "section-gap": "32px",
+                    "card-padding": "16px",
+                    "max-width": "1200px",
+                    "element-gap": "8px"
+            },
+            "fontFamily": {
+                    "body": ["hankenGrotesk"],
+                    "heading-lg": ["notoSerif"],
+                    "subheading": ["hankenGrotesk"],
+                    "heading": ["notoSerif"],
+                    "caption": ["hankenGrotesk"],
+                    "button-label": ["hankenGrotesk"],
+                    "display": ["notoSerif"]
+            },
+            "fontSize": {
+                    "body": ["15px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "heading-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "subheading": ["18px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "heading": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "caption": ["13px", {"lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "button-label": ["16px", {"lineHeight": "1", "letterSpacing": "-0.012em", "fontWeight": "600"}],
+                    "display": ["54px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8f9;
+            color: #1c1b1c;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .timer-ring-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+        .timer-svg {
+            transform: rotate(-90deg);
+        }
+        .progress-circle {
+            transition: stroke-dashoffset 0.5s ease;
+            stroke-dasharray: 816; /* 2 * PI * 130 */
+            stroke-dashoffset: 200;
+        }
+        .glass-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="font-body text-body">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm h-16 flex items-center">
+<div class="flex justify-between items-center w-full px-6 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="api">api</span>
+<span class="font-heading text-subheading tracking-tight text-primary">Focusly</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-slate-gray">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-steel-gray">
+<img class="w-full h-full object-cover" data-alt="A professional studio headshot of a young creative professional named Alex, with soft daylight lighting, a minimalist background, and a clean, light-mode aesthetic. The portrait captures a calm, focused expression suitable for a high-end productivity application. High-resolution digital photography with subtle shadows and natural skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAc8H5t2g4eY7lcu93kAs6H7T2keI77lpv0uXisApEup698iZu3erNDFIv0Jc9Adq6te82eETk5d6cyEXdQPmZMuyJBUYS6x7WLTfhcdUfVne-jv8FOvaYdolqavEEgBHi-iHKDuWN4ziJ6sPxqW8F_Df3z8mS7vDHdUvNsn76CvHyuO9yAWWJ0uLYQmqsjk5IH4ldctEWpofr_FBYJ6yifg3xmKD5DH6XsV5eRTP_HKivXSw6oadh_A"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-[1200px] mx-auto">
+<!-- Greeting & Quote Section -->
+<section class="mb-10 text-center animate-in fade-in duration-700 slide-in-from-bottom-4">
+<h1 class="font-heading text-heading text-on-surface mb-2">Good morning, Alex</h1>
+<p class="font-body text-body text-slate-gray italic max-w-xs mx-auto">
+                "Focus is a matter of deciding what things you are not going to do."
+            </p>
+</section>
+<!-- Large Timer Component -->
+<section class="flex flex-col items-center mb-section-gap">
+<div class="timer-ring-container mb-8">
+<svg class="timer-svg w-full h-full" viewbox="0 0 300 300">
+<!-- Background Circle -->
+<circle cx="150" cy="150" fill="none" r="130" stroke="#eef1ed" stroke-width="8"></circle>
+<!-- Progress Circle -->
+<circle class="progress-circle" cx="150" cy="150" fill="none" r="130" stroke="#41a1cf" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display text-display text-primary tracking-tighter">25:00</span>
+<span class="font-caption text-caption text-slate-gray tracking-widest uppercase mt-[-4px]">Deep Work</span>
+</div>
+</div>
+<!-- Controls -->
+<div class="flex items-center gap-10">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-ash-gray text-slate-gray active:scale-90 transition-transform">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+<button class="w-20 h-20 flex items-center justify-center rounded-full bg-primary text-white shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-ash-gray text-slate-gray active:scale-90 transition-transform">
+<span class="material-symbols-outlined">skip_next</span>
+</button>
+</div>
+</section>
+<!-- Stats Bento Grid / Stacked Cards -->
+<section class="grid grid-cols-1 gap-4">
+<!-- Current Streak Card -->
+<div class="bg-off-white p-6 rounded-xl shadow-sm border border-steel-gray/30 flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-slate-gray block mb-1">Current Streak</span>
+<span class="font-heading text-subheading text-primary">12 Days</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+<!-- Total Time Card -->
+<div class="bg-off-white p-6 rounded-xl shadow-sm border border-steel-gray/30 flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-slate-gray block mb-1">Total Time Today</span>
+<span class="font-heading text-subheading text-primary">3h 45m</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-action-azure/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-action-azure">schedule</span>
+</div>
+</div>
+<!-- Focus Quality Tip (Architectural Element) -->
+<div class="mt-4 p-5 rounded-xl bg-primary-container text-white/90 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-subheading text-subheading mb-1 text-action-azure">Focus Insight</h3>
+<p class="font-caption text-caption opacity-80 leading-relaxed">Your focus peak usually occurs between 9:00 AM and 11:30 AM. Schedule your most complex tasks then.</p>
+</div>
+<!-- Abstract Architectural Decor -->
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-action-azure/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-ash-gray/90 backdrop-blur-xl z-50 rounded-t-xl shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<!-- Timer Tab (Active) -->
+<div class="flex flex-col items-center justify-center bg-secondary-fixed text-on-secondary-fixed rounded-full px-5 py-1.5 active:scale-90 duration-150 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-caption text-caption">Timer</span>
+</div>
+<!-- Stats Tab -->
+<div class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-caption text-caption">Stats</span>
+</div>
+<!-- History Tab -->
+<div class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined">history</span>
+<span class="font-caption text-caption">History</span>
+</div>
+<!-- Settings Tab -->
+<div class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-caption text-caption">Settings</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for the play button
+        const playBtn = document.querySelector('button .material-symbols-outlined[data-icon="play_arrow"]')?.parentElement || document.querySelector('button span[style*="play_arrow"]')?.parentElement;
+        if(playBtn) {
+            playBtn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                if(icon.textContent === 'play_arrow') {
+                    icon.textContent = 'pause';
+                } else {
+                    icon.textContent = 'play_arrow';
+                }
+            });
+        }
+
+        // Animate progress ring on load
+        window.addEventListener('load', () => {
+            const circle = document.querySelector('.progress-circle');
+            if (circle) {
+                // Set initial state
+                circle.style.strokeDashoffset = '816';
+                setTimeout(() => {
+                    // Animate to 75% for visual appeal
+                    circle.style.strokeDashoffset = '204'; 
+                }, 500);
+            }
+        });
+    </script>
+</body></html>

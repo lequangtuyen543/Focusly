@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Focusly - Session History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .glass-card {
+            background: rgba(254, 255, 252, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "charcoal": "#2c2c2c",
+                        "ash-gray": "#f9faf7",
+                        "primary-container": "#1f1f29",
+                        "on-secondary-fixed": "#001e31",
+                        "tertiary": "#0c0801",
+                        "surface": "#fcf8f9",
+                        "on-secondary-container": "#004970",
+                        "inverse-on-surface": "#f4f0f0",
+                        "surface-bright": "#fcf8f9",
+                        "steel-gray": "#dee2de",
+                        "tertiary-container": "#252011",
+                        "primary-fixed-dim": "#c7c5d3",
+                        "surface-dim": "#ddd9da",
+                        "surface-tint": "#5e5d69",
+                        "medium-gray": "#646464",
+                        "on-tertiary-fixed": "#201b0d",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#004b72",
+                        "surface-variant": "#e5e1e2",
+                        "secondary-fixed": "#cce5ff",
+                        "background": "#fcf8f9",
+                        "pitch-black": "#000000",
+                        "primary-fixed": "#e3e1ef",
+                        "surface-container-low": "#f7f3f3",
+                        "cool-gray": "#eef1ed",
+                        "outline": "#78767c",
+                        "on-tertiary-fixed-variant": "#4d4635",
+                        "on-surface": "#1c1b1c",
+                        "on-tertiary-container": "#908773",
+                        "action-azure": "#41a1cf",
+                        "on-primary-fixed-variant": "#464651",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#1b1b25",
+                        "slate-gray": "#444141",
+                        "outline-variant": "#c8c5cc",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#90cdff",
+                        "canvas-white": "#ffffff",
+                        "secondary": "#006496",
+                        "rich-black": "#282834",
+                        "surface-container-highest": "#e5e1e2",
+                        "surface-container-high": "#ebe7e8",
+                        "surface-container": "#f1edee",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#60bbfe",
+                        "inverse-primary": "#c7c5d3",
+                        "dark-charcoal": "#171717",
+                        "tertiary-fixed-dim": "#d0c6af",
+                        "on-surface-variant": "#47464b",
+                        "on-primary-container": "#878693",
+                        "error-container": "#ffdad6",
+                        "off-white": "#fefffc",
+                        "inverse-surface": "#313031",
+                        "light-gray": "#b4b8b4",
+                        "tertiary-fixed": "#ece2ca",
+                        "primary": "#070710",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "body": ["Hanken Grotesk", "sans-serif"],
+                        "heading-lg": ["Noto Serif", "serif"],
+                        "subheading": ["Hanken Grotesk", "sans-serif"],
+                        "heading": ["Noto Serif", "serif"],
+                        "caption": ["Hanken Grotesk", "sans-serif"],
+                        "button-label": ["Hanken Grotesk", "sans-serif"],
+                        "display": ["Noto Serif", "serif"]
+                    },
+                    "fontSize": {
+                        "body": ["15px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "heading-lg": ["36px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "subheading": ["18px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "heading": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "caption": ["13px", {"lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "button-label": ["16px", {"lineHeight": "1", "letterSpacing": "-0.012em", "fontWeight": "600"}],
+                        "display": ["42px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="api">api</span>
+<h1 class="font-heading text-subheading tracking-tight text-primary">Focusly</h1>
+</div>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-slate-gray" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 max-w-md mx-auto">
+<section class="mb-10">
+<h2 class="font-heading-lg text-heading-lg mb-2 text-primary">History</h2>
+<p class="font-body text-medium-gray mb-8">Reflect on your previous deep work sessions.</p>
+<!-- Date Filter / Quick Stats Row -->
+<div class="flex gap-4 mb-8 overflow-x-auto pb-2">
+<div class="bg-off-white px-4 py-3 rounded-xl border border-steel-gray flex-shrink-0 min-w-[120px]">
+<span class="font-caption text-slate-gray block">This Week</span>
+<span class="font-subheading text-primary">12.5 hrs</span>
+</div>
+<div class="bg-off-white px-4 py-3 rounded-xl border border-steel-gray flex-shrink-0 min-w-[120px]">
+<span class="font-caption text-slate-gray block">Avg Focus</span>
+<span class="font-subheading text-primary">92%</span>
+</div>
+<div class="bg-off-white px-4 py-3 rounded-xl border border-steel-gray flex-shrink-0 min-w-[120px]">
+<span class="font-caption text-slate-gray block">Streak</span>
+<span class="font-subheading text-primary">5 days</span>
+</div>
+</div>
+<!-- List: Today -->
+<div class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-subheading text-primary">Today</h3>
+<span class="font-caption text-action-azure">2 sessions</span>
+</div>
+<div class="space-y-4">
+<!-- Session Card 1 -->
+<div class="bg-off-white p-5 rounded-xl border border-steel-gray shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-fixed flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="code">code</span>
+</div>
+<div>
+<h4 class="font-subheading text-primary leading-tight">UI System Refactor</h4>
+<span class="font-caption text-slate-gray">Work • Deep Focus</span>
+</div>
+</div>
+<span class="font-subheading text-primary">45m</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-ash-gray">
+<div class="flex items-center gap-1 text-slate-gray">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-caption">09:15 AM - 10:00 AM</span>
+</div>
+<span class="material-symbols-outlined text-action-azure text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Session Card 2 -->
+<div class="bg-off-white p-5 rounded-xl border border-steel-gray shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-fixed flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="menu_book">menu_book</span>
+</div>
+<div>
+<h4 class="font-subheading text-primary leading-tight">Architecture Study</h4>
+<span class="font-caption text-slate-gray">Learning • Medium Focus</span>
+</div>
+</div>
+<span class="font-subheading text-primary">25m</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-ash-gray">
+<div class="flex items-center gap-1 text-slate-gray">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-caption">11:30 AM - 11:55 AM</span>
+</div>
+<span class="material-symbols-outlined text-action-azure text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- List: Yesterday -->
+<div class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-subheading text-primary">Yesterday</h3>
+<span class="font-caption text-slate-gray">Feb 24</span>
+</div>
+<div class="space-y-4">
+<!-- Session Card 3 -->
+<div class="bg-off-white p-5 rounded-xl border border-steel-gray shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-fixed flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-subheading text-primary leading-tight">Email Triage</h4>
+<span class="font-caption text-slate-gray">Admin • Quick Task</span>
+</div>
+</div>
+<span class="font-subheading text-primary">15m</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-ash-gray">
+<div class="flex items-center gap-1 text-slate-gray">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-caption">04:00 PM - 04:15 PM</span>
+</div>
+<span class="material-symbols-outlined text-action-azure text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- List: Saturday (Empty State Example) -->
+<div class="mb-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-subheading text-primary">Feb 23</h3>
+<span class="font-caption text-slate-gray">Saturday</span>
+</div>
+<div class="flex flex-col items-center justify-center p-12 bg-ash-gray/50 rounded-2xl border-2 border-dashed border-steel-gray">
+<div class="w-16 h-16 mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-light-gray text-4xl" data-icon="hotel">hotel</span>
+</div>
+<p class="font-body text-medium-gray text-center">No sessions recorded. Rest is as important as focus.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-ash-gray/90 backdrop-blur-xl z-50 rounded-t-xl shadow-lg">
+<!-- Timer -->
+<a class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="timer">timer</span>
+<span class="font-caption text-caption">Timer</span>
+</a>
+<!-- Stats -->
+<a class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bar_chart">bar_chart</span>
+<span class="font-caption text-caption">Stats</span>
+</a>
+<!-- History (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-fixed text-on-secondary-fixed rounded-full px-5 py-1.5 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-caption text-caption font-bold">History</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-slate-gray opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-caption text-caption">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for session cards
+        document.querySelectorAll('.bg-off-white').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.add('scale-98');
+                setTimeout(() => this.classList.remove('scale-98'), 100);
+            });
+        });
+    </script>
+</body></html>
