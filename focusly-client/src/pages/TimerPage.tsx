@@ -114,41 +114,35 @@ function TimerPage() {
   }, [progress]);
 
   return (
-    <div className="flex flex-col items-center gap-section-gap">
-      {/* Greeting & Quote Header */}
-      <header className="text-center w-full max-w-2xl mx-auto space-y-4">
+    <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-10">
+      <header className="mx-auto w-full max-w-2xl space-y-3 px-2 text-center sm:space-y-4">
         <h1 className="font-heading text-heading text-canvas-white">Good morning.</h1>
         <p className="font-body text-subheading text-cool-gray">
           “Architecture starts when you carefully put two bricks together.” — Mies van der Rohe
         </p>
       </header>
 
-      {/* Timer Hero Section */}
-      <section className="w-full max-w-md mx-auto relative flex flex-col items-center justify-center mt-8">
-        <div className={`relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center bg-rich-black/70 rounded-[40px] shadow-card border border-outline-variant/15 transition-transform duration-300 ease-out ${pulsing ? 'scale-105' : 'scale-100'}`}>
+      <section className="flex w-full flex-col items-center justify-center">
+        <div className="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-center lg:justify-center lg:gap-8">
+          <div className={`relative flex aspect-square w-[min(82vw,24rem)] items-center justify-center rounded-[28px] border border-outline-variant/15 bg-rich-black/70 shadow-card transition-transform duration-300 ease-out sm:w-[min(78vw,26rem)] sm:rounded-[40px] lg:w-[min(38vw,26rem)] ${pulsing ? 'scale-105' : 'scale-100'}`}>
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-50">
+              <ProgressRing value={progress} size={220} className="md:hidden" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
+              <ProgressRing value={progress} size={320} className="hidden md:inline-flex" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
+            </div>
 
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
-             {/* Mobile ring */}
-             <ProgressRing value={progress} size={280} className="md:hidden" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
-             {/* Desktop ring */}
-             <ProgressRing value={progress} size={310} className="hidden md:inline-flex" color={mode === 'focus' ? 'stroke-cofounder-blue' : 'stroke-action-azure'} strokeWidth={6} />
+            <div className="z-10 flex flex-col items-center gap-3 px-4 text-center sm:gap-4">
+              <SessionStatus />
+              <TimerDisplay />
+              <span className="font-body text-body text-cool-gray">Pomodoro</span>
+            </div>
           </div>
-          
-          {/* Timer Display (central) */}
-          <div className="text-center z-10 flex flex-col items-center gap-4">
-            <SessionStatus />
-            <TimerDisplay />
-            <span className="font-body text-body text-cool-gray">Pomodoro</span>
+
+          <div className="flex items-center justify-center lg:min-w-[7rem]">
+            <DailyProgress size={96} className="hidden lg:block" />
           </div>
         </div>
 
-        {/* Daily progress ring placed beside the timer on md+ screens; absolute so layout unchanged */}
-        <div className="hidden md:block absolute right-[-72px] top-1/2 -translate-y-1/2">
-          <DailyProgress size={96} />
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center gap-6 mt-12">
+        <div className="mt-8 w-full px-2 sm:px-0">
           <TimerControls />
         </div>
       </section>

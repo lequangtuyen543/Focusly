@@ -71,40 +71,45 @@ function StatsPage() {
 
   return (
     <div className="flex flex-col gap-6 pb-20">
-      <section className="mb-2">
-        <h1 className="font-heading-lg text-heading-lg text-canvas-white mb-4">
+      <section className="mb-2 px-1">
+        <h1 className="mb-4 font-heading-lg text-heading-lg text-canvas-white">
           Your Progress
         </h1>
-        <p className="font-body text-body text-cool-gray max-w-2xl">
+        <p className="max-w-2xl font-body text-body text-cool-gray">
           A high-level overview of your focus sessions and productivity trends. Consistent effort compounds over time.
         </p>
       </section>
 
-      <TodaySummary
-        totalFocusSeconds={todayFocusSeconds}
-        pomodoros={todayPomodoros}
-        dailyGoal={settings.dailyGoal}
-      />
+      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div className="flex flex-col gap-6">
+          <TodaySummary
+            totalFocusSeconds={todayFocusSeconds}
+            pomodoros={todayPomodoros}
+            dailyGoal={settings.dailyGoal}
+          />
+          <WeeklyChart data={weeklyData} />
+        </div>
 
-      <WeeklyChart data={weeklyData} />
+        <div className="flex flex-col gap-6">
+          <StreakDisplay
+            currentStreak={streak.currentStreak}
+            bestStreak={streak.longestStreak}
+          />
 
-      <StreakDisplay
-        currentStreak={streak.currentStreak}
-        bestStreak={streak.longestStreak}
-      />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <StatCard
-          label="Total Focus Time"
-          value={`${formatHours(totalFocusSeconds)}h`}
-          icon={<span className="material-symbols-outlined">schedule</span>}
-        />
-        <StatCard
-          label="Total Pomodoros"
-          value={totalPomodoros}
-          subText="Completed sessions"
-          icon={<span className="material-symbols-outlined">task_alt</span>}
-        />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <StatCard
+              label="Total Focus Time"
+              value={`${formatHours(totalFocusSeconds)}h`}
+              icon={<span className="material-symbols-outlined">schedule</span>}
+            />
+            <StatCard
+              label="Total Pomodoros"
+              value={totalPomodoros}
+              subText="Completed sessions"
+              icon={<span className="material-symbols-outlined">task_alt</span>}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -32,14 +32,13 @@ const SessionItem: React.FC<SessionItemProps> = ({ session }) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-between gap-4 px-4 py-3 rounded-cards-sm border border-outline-variant/15',
-        'transition-colors duration-200',
+        'flex flex-col gap-3 rounded-cards-sm border border-outline-variant/15 px-4 py-3 transition-colors duration-200 sm:flex-row sm:items-center sm:justify-between sm:gap-4',
         bgColor,
       )}
     >
-      <div className="flex items-center gap-3 flex-1">
+      <div className="flex min-w-0 flex-1 items-start gap-3">
         <span className="text-xl">{icon}</span>
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="text-caption text-cool-gray">
             {startTime} → {endTime}
           </div>
@@ -48,7 +47,7 @@ const SessionItem: React.FC<SessionItemProps> = ({ session }) => {
           </div>
         </div>
       </div>
-      <Badge variant={badgeVariant}>{badgeText}</Badge>
+      <Badge variant={badgeVariant} className="self-start sm:self-auto">{badgeText}</Badge>
     </div>
   );
 };

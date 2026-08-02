@@ -13,8 +13,8 @@ const SessionStatus: React.FC = () => {
   const sessionNumber = todayCompletedFocusCount + 1;
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="px-3 py-1 rounded-full bg-cofounder-blue/10 text-cofounder-blue font-caption uppercase tracking-widest font-semibold">
+    <div className="flex flex-col items-center text-center">
+      <div className="rounded-full bg-cofounder-blue/10 px-3 py-1 font-caption font-semibold uppercase tracking-widest text-cofounder-blue">
         {mode === 'focus' ? 'FOCUS' : 'BREAK'}
       </div>
       <div className="mt-2 text-body text-cool-gray">Session #{sessionNumber} today</div>

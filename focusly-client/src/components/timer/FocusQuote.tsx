@@ -39,12 +39,12 @@ const FocusQuote: React.FC = () => {
   }, [pickDifferent]);
 
   return (
-    <section className="w-full max-w-md mx-auto mt-8">
-      <div className="bg-rich-black/70 rounded-xl p-6 border border-outline-variant/15 shadow-card">
-        <div className="font-caption text-caption text-cool-gray mb-2">Focus Quote</div>
+    <section className="mx-auto mt-8 w-full max-w-md px-2 sm:px-0">
+      <div className="rounded-xl border border-outline-variant/15 bg-rich-black/70 p-4 shadow-card sm:p-6">
+        <div className="mb-2 font-caption text-caption text-cool-gray">Focus Quote</div>
 
         <div
-          className={`font-caption text-caption text-cool-gray italic text-center transition-opacity duration-300 motion-reduce:transition-none min-h-[3rem] flex items-center justify-center ${
+          className={`flex min-h-[3rem] items-center justify-center text-center font-caption text-caption italic text-cool-gray transition-opacity duration-300 motion-reduce:transition-none ${
             visible ? 'opacity-100' : 'opacity-0'
           }`}
           aria-live="polite"
@@ -56,7 +56,7 @@ const FocusQuote: React.FC = () => {
           <button
             type="button"
             aria-label="Refresh quote"
-            className="text-caption text-cool-gray hover:text-cofounder-blue focus:outline-none focus:ring-2 focus:ring-cofounder-blue/30 rounded"
+            className="rounded text-caption text-cool-gray hover:text-cofounder-blue focus:outline-none focus:ring-2 focus:ring-cofounder-blue/30"
             onClick={handleRefresh}
           >
             ↻

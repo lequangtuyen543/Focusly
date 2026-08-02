@@ -72,22 +72,43 @@
 
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 140, 166, 0.75) rgba(24, 24, 29, 0.55);
   }
 
   body {
     @apply bg-[#171717] text-canvas-white font-body antialiased min-h-screen;
     font-family: "Hanken Grotesk", system-ui, sans-serif;
     letter-spacing: -0.01em;
-  }
-
-  html {
+    overflow-x: hidden;
+    max-width: 100%;
     scrollbar-width: thin;
     scrollbar-color: rgba(129, 140, 166, 0.75) rgba(24, 24, 29, 0.55);
   }
 
-  body {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(129, 140, 166, 0.75) rgba(24, 24, 29, 0.55);
+  #root {
+    min-width: 0;
+  }
+
+  input[aria-hidden="true"][tabindex="-1"] {
+    position: fixed !important;
+    inset: 0 auto auto 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    clip: rect(0, 0, 0, 0) !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
   }
 
   ::-webkit-scrollbar {
@@ -134,7 +155,7 @@
   /* Typography — Design System exact specs */
   .text-display {
     font-family: "Noto Serif", Georgia, serif;
-    font-size: 54px;
+    font-size: clamp(2.75rem, 7vw, 4.75rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 500;
@@ -142,7 +163,7 @@
 
   .text-heading-lg {
     font-family: "Noto Serif", Georgia, serif;
-    font-size: 48px;
+    font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 500;
@@ -150,7 +171,7 @@
 
   .text-heading {
     font-family: "Noto Serif", Georgia, serif;
-    font-size: 40px;
+    font-size: clamp(1.75rem, 4.5vw, 2.5rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 400;
@@ -186,19 +207,6 @@
     line-height: 1.5;
     letter-spacing: -0.01em;
     font-weight: 400;
-  }
-
-  /* Responsive typography */
-  @media (max-width: 768px) {
-    .text-display {
-      font-size: 36px;
-    }
-    .text-heading-lg {
-      font-size: 32px;
-    }
-    .text-heading {
-      font-size: 28px;
-    }
   }
 
   /* Component patterns from design system */

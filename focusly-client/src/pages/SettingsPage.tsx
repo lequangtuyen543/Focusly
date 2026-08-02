@@ -24,24 +24,22 @@ function SettingsPage() {
   const [strictMode, setStrictMode] = useState(false);
 
   return (
-    <div className="flex flex-col gap-section-gap">
-      {/* Header */}
-      <header className="mb-8">
-        <h1 className="font-display text-display text-canvas-white mb-2">Configuration</h1>
-        <p className="font-body text-body text-cool-gray max-w-2xl">
+    <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
+      <header className="px-1">
+        <h1 className="mb-2 font-display text-display text-canvas-white">Configuration</h1>
+        <p className="max-w-2xl font-body text-body text-cool-gray">
           Refine your environment for peak intellectual focus.
         </p>
       </header>
 
-      {/* Settings Canvas */}
-      <div className="bg-rich-black/70 rounded-cards-lg p-8 md:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.35),0_1px_2px_rgba(0,0,0,0.2)] border border-outline-variant/15 flex flex-col gap-12">
+      <div className="flex flex-col gap-8 rounded-cards-lg border border-outline-variant/15 bg-rich-black/70 p-3 shadow-[0_4px_24px_rgba(0,0,0,0.35),0_1px_2px_rgba(0,0,0,0.2)] sm:p-6 md:p-8 lg:p-10 lg:gap-10">
         {/* Timer Durations */}
         <section className="flex flex-col gap-6" id="timers">
           <div>
-            <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Timer Durations</h2>
+            <h2 className="mb-1 font-heading text-heading-lg text-canvas-white">Timer Durations</h2>
             <p className="font-body text-body text-cool-gray">Define the temporal blocks for your sessions.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="flex flex-col gap-2">
               <label className="font-button-label text-button-label text-cool-gray">Focus Block</label>
               <Select 
@@ -84,12 +82,12 @@ function SettingsPage() {
         <hr className="border-t border-outline-variant/20" />
 
         {/* Daily Goal */}
-        <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center" id="goals">
+        <section className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center" id="goals">
           <div className="flex-1">
-            <h2 className="font-heading text-heading-lg text-canvas-white mb-1">Daily Goal</h2>
+            <h2 className="mb-1 font-heading text-heading-lg text-canvas-white">Daily Goal</h2>
             <p className="font-body text-body text-cool-gray">Target number of focus blocks per day.</p>
           </div>
-          <div className="w-full md:w-48 relative flex items-center bg-rich-black/60 border border-outline-variant/20 transition-all focus-within:border-cofounder-blue focus-within:ring-1 focus-within:ring-cofounder-blue">
+          <div className="relative flex w-full max-w-[14rem] items-center border border-outline-variant/20 bg-rich-black/60 transition-all focus-within:border-cofounder-blue focus-within:ring-1 focus-within:ring-cofounder-blue sm:w-56 md:w-48">
             <button 
                className="px-4 py-3 text-cool-gray hover:text-canvas-white focus:outline-none" 
                onClick={() => updateSettings({ dailyGoal: Math.max(1, settings.dailyGoal - 1) })}
@@ -138,8 +136,8 @@ function SettingsPage() {
             <p className="font-body text-body text-cool-gray">Manage your ambient notifications and audio cues.</p>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
-              <div>
+            <div className="flex flex-col gap-3 rounded-lg p-4 transition-colors hover:bg-rich-black/30 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0 flex-1">
                 <h3 className="font-subheading text-subheading text-canvas-white">Push Notifications</h3>
                 <p className="font-caption text-caption text-cool-gray">Alerts when a block completes.</p>
               </div>
@@ -159,8 +157,8 @@ function SettingsPage() {
                 />
               </button>
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
-              <div>
+            <div className="flex flex-col gap-3 rounded-lg p-4 transition-colors hover:bg-rich-black/30 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0 flex-1">
                 <h3 className="font-subheading text-subheading text-canvas-white">Audio Cues</h3>
                 <p className="font-caption text-caption text-cool-gray">Subtle chimes for state transitions.</p>
               </div>
@@ -180,8 +178,8 @@ function SettingsPage() {
                 />
               </button>
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg hover:bg-rich-black/30 transition-colors">
-              <div>
+            <div className="flex flex-col gap-3 rounded-lg p-4 transition-colors hover:bg-rich-black/30 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0 flex-1">
                 <h3 className="font-subheading text-subheading text-canvas-white">Strict Mode</h3>
                 <p className="font-caption text-caption text-cool-gray">Prevent ending a focus block early.</p>
               </div>
@@ -207,14 +205,14 @@ function SettingsPage() {
         <hr className="border-t border-outline-variant/20" />
 
         {/* Data Management */}
-        <section className="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center bg-rich-black/40 p-6 rounded-xl border border-outline-variant/15" id="data">
+        <section className="flex flex-col items-start justify-between gap-8 rounded-xl border border-outline-variant/15 bg-rich-black/40 p-4 sm:p-6 md:flex-row md:items-center" id="data">
           <div className="flex-1">
-            <h2 className="font-subheading text-subheading text-error mb-1">Reset All Data</h2>
+            <h2 className="mb-1 font-subheading text-subheading text-error">Reset All Data</h2>
             <p className="font-caption text-caption text-cool-gray">
               Permanently delete all session history and configuration. This action cannot be undone.
             </p>
           </div>
-          <div>
+          <div className="w-full md:w-auto">
             <Dialog>
               <DialogTrigger render={<Button variant="danger" />}>
                 Reset về mặc định

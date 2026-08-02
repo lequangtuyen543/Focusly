@@ -80,15 +80,15 @@ const TimerControls: React.FC = () => {
   }, [clearConfirm]);
 
   return (
-    <div className="flex items-center gap-6 mt-12">
+    <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:mt-12">
       <button
         onClick={status !== 'idle' ? handleResetClick : undefined}
         disabled={status === 'idle'}
-        className={`w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 transition-colors ${
+        className={`flex h-12 w-12 items-center justify-center rounded-full border border-outline-variant/50 transition-colors sm:h-14 sm:w-14 ${
           status === 'idle'
-            ? 'text-cool-gray opacity-50 cursor-not-allowed'
+            ? 'cursor-not-allowed text-cool-gray opacity-50'
             : confirmingReset
-            ? 'text-error border-error/50 hover:bg-error/10'
+            ? 'border-error/50 text-error hover:bg-error/10'
             : 'text-cool-gray hover:bg-rich-black/30 hover:text-canvas-white'
         }`}
         title={confirmingReset ? 'Confirm Reset' : 'Reset'}
@@ -101,20 +101,20 @@ const TimerControls: React.FC = () => {
       {status === 'running' ? (
         <button
           onClick={pause}
-          className="w-20 h-20 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-sm hover:scale-95 transition-transform"
+          className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-on-primary shadow-sm transition-transform hover:scale-95 sm:h-24 sm:w-24"
           title="Pause"
         >
-          <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <span className="material-symbols-outlined text-4xl sm:text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>
             pause
           </span>
         </button>
       ) : (
         <button
           onClick={status === 'idle' ? handleStart : resume}
-          className="w-20 h-20 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-sm hover:scale-95 transition-transform"
+          className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-on-primary shadow-sm transition-transform hover:scale-95 sm:h-24 sm:w-24"
           title={status === 'idle' ? 'Start' : 'Resume'}
         >
-          <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <span className="material-symbols-outlined text-4xl sm:text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>
             play_arrow
           </span>
         </button>
@@ -122,7 +122,7 @@ const TimerControls: React.FC = () => {
 
       <button
         disabled
-        className="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/50 text-cool-gray opacity-50 cursor-not-allowed transition-colors"
+        className="flex h-12 w-12 items-center justify-center rounded-full border border-outline-variant/50 text-cool-gray opacity-50 transition-colors sm:h-14 sm:w-14"
         title="Skip Next"
       >
         <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>

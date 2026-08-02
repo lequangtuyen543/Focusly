@@ -309,11 +309,11 @@ Phase 10 → Deploy & Tài liệu hóa
 
 ### 5.3 Responsive Testing
 
-- [ ] Test trên 375px (iPhone SE): không bị overflow, timer đủ to để đọc
-- [ ] Test trên 390px (iPhone 14): layout chuẩn
-- [ ] Test trên 768px (iPad): layout điều chỉnh hợp lý
-- [ ] Test trên 1280px (Laptop): full layout đẹp
-- [ ] Test trên 1440px (Desktop lớn): không quá rộng (max-width container)
+- [x] Test trên 375px (iPhone SE): không bị overflow, timer đủ to để đọc
+- [x] Test trên 390px (iPhone 14): layout chuẩn
+- [x] Test trên 768px (iPad): layout điều chỉnh hợp lý
+- [x] Test trên 1280px (Laptop): full layout đẹp
+- [x] Test trên 1440px (Desktop lớn): không quá rộng (max-width container)
 - [ ] Navigation: desktop → top nav; mobile → bottom tab bar hoặc hamburger
 
 ### 5.4 Tab Title & Favicon
